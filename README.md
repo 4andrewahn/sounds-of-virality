@@ -13,7 +13,7 @@ In this exploration of sounds, there will be 3 phases:
 ### Phase 1: Data Collection
 This project will use Spotify's API to gather information about songs and their 12 associated audio-features as provided by Spotify. The songs analyzed will be split into 3 groups by their genre: Pop, Hip-Hop, and Viral. The specific songs to be included in our dataset will be determined by playlists that fit two criteria: the playlist must be curated by Spotify (instead of a user), and the playlist must have atleast 1 million likes. By sampling songs with this method, we hope to gain a broad-level overview of popular songs from each genre for a fair and accurate comparison. 
 
-The full data collection process can be viewed in `data_collection.ipynb`
+> The full data collection process can be viewed in `data_collection.ipynb`
 
 The final compiled dataset will be contain the following attributes:
 | **Attribute** | **Data Type** | **Description** |
