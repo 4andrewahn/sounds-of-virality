@@ -1,5 +1,0 @@
-ipykernel
-flask
-requests
-python-dotenv
-datetime
