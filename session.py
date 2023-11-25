@@ -1,15 +1,15 @@
-import requests
-import base64
 import os
-from dotenv import load_dotenv
-import datetime as dt
+import base64
 import time
+import requests
+from dotenv import load_dotenv
 
+# Load environmental variables
 load_dotenv()
 
 # Spotify API related constants
 BASE_API_URL = 'https://api.spotify.com/v1'
-MAX_API_CALLS = 25 # Max allowed request sent per function
+MAX_API_CALLS = 25 # Max allowed requests sent per function
 SLEEP_TIME = 1
 
 # 12 Audio attributes for data collection 
@@ -32,7 +32,6 @@ ATTRIBUTES = [
 
 class SessionError(Exception):
     '''Exception for all session-related errors'''
-    pass
 
 class Session:
     def __init__(self):
@@ -86,7 +85,8 @@ class Session:
             'Authorization': f'Bearer {self.token}'
         }
 
-        # Send requests until all tracks have been parsed from the playlist 
+        # Send requests until all tracks have been parsed from the playlist. 
+        # We know we are at the end of the playlist when the number of tracks returned is less than the limit of 50 tracks
         while not at_playlist_end:
             # Check rate limiting 
             if request_count >= MAX_API_CALLS: 
@@ -150,6 +150,8 @@ class Session:
         num_tracks_inputted = len(track_ids)
         has_completed_list = False
 
+        # We know that all audio feature data has been collected when the number of tracks sent to Spotify's API
+        # matches the number of tracks inputted into the function 
         tracks_requested = 0
         while not has_completed_list: 
             # Check rate limiting 
