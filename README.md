@@ -8,6 +8,8 @@
 
 <h1>Sounds of Virality</h1>
 
+#### See the full project at: [4andrewahn.github.io/sounds-of-virality/](https://4andrewahn.github.io/sounds-of-virality/)
+
 <!-- TABLE OF CONTENTS -->
 
 <details>
