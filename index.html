@@ -395,7 +395,7 @@ To ensure a fair comparison across genres, tracks in the dataset will be pulled 
     <li style="font-size: 110%; font-weight: bold;">Must be curated by Spotify</li>
     <li style="font-size: 110%; font-weight: bold;">Must have a minimum of 1 million likes</li>
 </ol>
-<blockquote><b>Note:</b> Certain tracks may appear in multiple playlists within a genre, our API wrapper is designed to prevent duplicate entries._</blockquote>
+<blockquote><b>Note:</b> Certain tracks may appear in multiple playlists within a genre, our API wrapper is designed to prevent duplicate entries.</blockquote>
     
 <details>
     <summary class="toggle">[See selected playlists]</summary>
@@ -439,7 +439,7 @@ Once the dataset has been collected, we must verify its contents before moving o
     
 <!-- Data sampling verification code snippet -->
 
-<details style="width: 100%; padding-top: 5px;">
+<details style="width: 100%; margin-top: 10px;">
 <summary class="toggle">[Show Code]</summary>
 <div style="display: flex; justify-content: space-between;">
 <div style="flex: 0 0; width: 100%; white-space: nowrap;">
@@ -476,7 +476,7 @@ Viral: 255 tracks, 36.02% of total dataset</code></pre>
 After checking the distribution of each genre in the sampling of our complete dataset, we use our Session API wrapper again to collect the audio feature data for every track. In this process, the Session wrapper aggregates the responses from multiple API calls and returns the audio data as a list of dictionaries where each dictionary contains the key-value pairs for all audio attributes and for a track's Spotify ID. We can verify that the resulting audio data collected for each genre <b>does not contain any null values</b> by using another Python snippet.
     
 <!-- No missing value verification code snippet-->
-<details style="width: 100%; padding-top: 5px;">
+<details style="width: 100%; margin-top: 10px;">
 <summary class="toggle">[Show Code]</summary>
 <div style="display: flex; justify-content: space-between;">
 <div style="flex: 0 0; width: 100%; white-space: nowrap;">
@@ -602,7 +602,70 @@ Dataset contains 255 rows
 
 <!-- CDA results -->
 <h3 id="cda-results"><span class="subsection_title">Results from CDA</span></h3>
+
 <p class="subtitle">&#x2756 Comparative Descriptive Statistics Across Genres</p>
+
+<details style="width: 100%; margin-top: 10px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #98c379;">'''
+Comparative Descriptive Analysis
+'''</span>
+<span style="color: #5d6370; font-style: italic"># Split dataset into smaller datasets grouped by 'genre'</span>
+viral_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Viral'</span>]
+viral_audio_data = viral_data[audio_features]
+        
+other_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] != <span style="color: #98c379;">'Viral'</span>]
+other_audio_data = other_data[audio_features]
+        
+pop_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Pop'</span>]
+pop_audio_data = pop_data[audio_features]
+        
+hiphop_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Hip-Hop'</span>]
+hiphop_audio_data = hiphop_data[audio_features]
+        
+        
+<span style="color: #5d6370; font-style: italic"># Compute descriptive statistics of each genre group</span>
+viral_audio_stats = viral_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+other_audio_stats = other_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+pop_audio_stats = pop_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+hiphop_audio_stats = hiphop_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+        
+        
+<span style="color: #5d6370; font-style: italic"># Compare the descriptive statistics of the 'Viral' genre with other genres</span>
+viral_vs_other_stats = viral_audio_stats - other_audio_stats
+viral_vs_pop_stats = viral_audio_stats - pop_audio_stats
+viral_vs_hiphop_stats = viral_audio_stats - hiphop_audio_stats
+        
+    
+<span style="color: #5d6370; font-style: italic"># Sort the comparative statistics for easier interpretation</span>
+viral_vs_other_stats_T = viral_vs_other_stats.T
+viral_vs_other_stats_sorted = viral_vs_other_stats_T.reindex(viral_vs_other_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
+        
+viral_vs_pop_stats_T = viral_vs_pop_stats.T
+viral_vs_pop_stats_sorted = viral_vs_pop_stats_T.reindex(viral_vs_pop_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
+        
+viral_vs_hiphop_stats_T = viral_vs_hiphop_stats.T
+viral_vs_hiphop_stats_sorted = viral_vs_hiphop_stats_T.reindex(viral_vs_hiphop_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
+        
+        
+<span style="color: #5d6370; font-style: italic"># Display results</span>
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs Other genres'</span>)
+display(viral_vs_other_stats_sorted)
+        
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs Pop'</span>)
+display(viral_vs_pop_stats_sorted)
+        
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs HipHop'</span>)
+display(viral_vs_hiphop_stats_sorted)
+</code></pre>
+</p>
+</div>
+</div>
+</details>
+
 <div style="display: flex; justify-content: space-between; margin-left: 20pt; margin-right: 20pt; margin-bottom: 10pt; overflow-x: auto;">
     <div style="width: 30%; text-align: center;">
         <div>
@@ -834,72 +897,9 @@ Dataset contains 255 rows
     </div>
 </div>
     
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
-<pre><code><span style="color: #98c379;">'''
-Comparative Descriptive Analysis
-'''</span>
-<span style="color: #5d6370; font-style: italic"># Split dataset into smaller datasets grouped by 'genre'</span>
-viral_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Viral'</span>]
-viral_audio_data = viral_data[audio_features]
-    
-other_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] != <span style="color: #98c379;">'Viral'</span>]
-other_audio_data = other_data[audio_features]
-    
-pop_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Pop'</span>]
-pop_audio_data = pop_data[audio_features]
-    
-hiphop_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Hip-Hop'</span>]
-hiphop_audio_data = hiphop_data[audio_features]
-    
-    
-<span style="color: #5d6370; font-style: italic"># Compute descriptive statistics of each genre group</span>
-viral_audio_stats = viral_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
-other_audio_stats = other_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
-pop_audio_stats = pop_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
-hiphop_audio_stats = hiphop_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
-    
-    
-<span style="color: #5d6370; font-style: italic"># Compare the descriptive statistics of the 'Viral' genre with other genres</span>
-viral_vs_other_stats = viral_audio_stats - other_audio_stats
-viral_vs_pop_stats = viral_audio_stats - pop_audio_stats
-viral_vs_hiphop_stats = viral_audio_stats - hiphop_audio_stats
-    
-
-<span style="color: #5d6370; font-style: italic"># Sort the comparative statistics for easier interpretation</span>
-viral_vs_other_stats_T = viral_vs_other_stats.T
-viral_vs_other_stats_sorted = viral_vs_other_stats_T.reindex(viral_vs_other_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
-    
-viral_vs_pop_stats_T = viral_vs_pop_stats.T
-viral_vs_pop_stats_sorted = viral_vs_pop_stats_T.reindex(viral_vs_pop_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
-    
-viral_vs_hiphop_stats_T = viral_vs_hiphop_stats.T
-viral_vs_hiphop_stats_sorted = viral_vs_hiphop_stats_T.reindex(viral_vs_hiphop_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
-    
-    
-<span style="color: #5d6370; font-style: italic"># Display results</span>
-<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs Other genres'</span>)
-display(viral_vs_other_stats_sorted)
-    
-<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs Pop'</span>)
-display(viral_vs_pop_stats_sorted)
-    
-<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs HipHop'</span>)
-display(viral_vs_hiphop_stats_sorted)
-</code></pre>
-</p>
-</div>
-</div>
-</details>
 <p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
-<br>
     
 <p class="subtitle">&#x2756 Pair-plot of most distinguishing audio features identified through CDA</p>
-    
-<img src="images/pairplot.png" width=70%>
     
 <details style="width: 100%; margin-top: 10px;">
 <summary class="toggle">[Show Code]</summary>
@@ -911,7 +911,7 @@ Pair-plots for most distinctive features of the 'Viral' genre
 '''</span>
 <span style="color: #5d6370; font-style: italic"># Selecting key features for the plot</span>
 features_to_plot = [<span style="color: #98c379;">'tempo'</span>, <span style="color: #98c379;">'key'</span>, <span style="color: #98c379;">'loudness'</span>, <span style="color: #98c379;">'speechiness'</span>]
-    
+        
 <span style="color: #5d6370; font-style: italic"># Creating a pairplot</span>
 plt.figure(figsize=(<span style="color: #d29b67;">10</span>, <span style="color: #d29b67;">8</span>))
 pair_plot = sns.pairplot(spotify_data, hue=<span style="color: #98c379;">'genre'</span>, <span style="color: #e7c07b;">vars</span>=features_to_plot, markers=<span style="color: #98c379;">'x'</span>, palette=genre_color_map, corner=<span style="color: #56b6c3;">True</span>)
@@ -922,6 +922,8 @@ plt.show()
 </div>
 </div>
 </details>
+
+<img src="images/pairplot.png" width=100%>
     
 <p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
@@ -930,8 +932,6 @@ plt.show()
 <h3 id="pca-results"><span class="subsection_title">Results from PCA</span></h3>
     
 <p class="subtitle">&#x2756 Scree Plot</p>
-    
-<img src="images/pca_scree_plot.png" width=70%>
     
 <details style="width: 100%; margin-top: 10px;">
 <summary class="toggle">[Show Code]</summary>
@@ -944,35 +944,36 @@ Applying PCA using the scikit-learn library
 <span style="color: #5d6370; font-style: italic"># Import required libraries</span>
 <span style="color: #c276d9;">from</span> sklearn.decomposition <span style="color: #c276d9;">import</span> PCA
 <span style="color: #c276d9;">from</span> sklearn.preprocessing <span style="color: #c276d9;">import</span> StandardScaler
-    
+        
 <span style="color: #5d6370; font-style: italic"># Selecting only the audio features for PCA</span>
 audio_data = spotify_data[audio_features]
-    
+        
 <span style="color: #5d6370; font-style: italic"># Standardizing the data</span>
 scaler = StandardScaler()
 audio_data_scaled = scaler.fit_transform(audio_data)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Fitting the PCA model</span>
 pca = PCA(n_components=<span style="color: #e7c07b;">len</span>(audio_features))
 audio_data_pca = pca.fit_transform(audio_data_scaled)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Plotting the explained variance ratio of each principal component</span>
 plt.figure(figsize=(<span style="color: #d29b67;">10</span>, <span style="color: #d29b67;">8</span>))
 barplot = sns.barplot(x=[<span style="color: #98c379;">f"PC</span><span style="color: #e06c76;">{i}</span><span style="color: #98c379;">"</span> <span style="color: #c276d9;">for</span> i <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">range</span>(<span style="color: #d29b67;">1</span>, <span style="color: #e7c07b;">len</span>(audio_features) + <span style="color: #d29b67;">1</span>>)],
-                     y=pca.explained_variance_ratio_, hue=pca.explained_variance_ratio_,
-                     palette=sns.light_palette(<span style="color: #98c379;">'mediumseagreen'</span>, as_cmap=<span style="color: #56b6c3;">True</span>),
-                     legend=<span style="color: #56b6c3;">False</span>)
-    
+                         y=pca.explained_variance_ratio_, hue=pca.explained_variance_ratio_,
+                         palette=sns.light_palette(<span style="color: #98c379;">'mediumseagreen'</span>, as_cmap=<span style="color: #56b6c3;">True</span>),
+                         legend=<span style="color: #56b6c3;">False</span>)
+        
 <span style="color: #5d6370; font-style: italic"># Add a line plot to visualize the 'elbow'</span>
 plt.plot(pca.explained_variance_ratio_, marker=<span style="color: #98c379;">'o'</span>, color=<span style="color: #98c379;">'#c678dd'</span>, alpha=<span style="color: #d29b67;">0.7</span>, linestyle=<span style="color: #98c379;">'-'</span>, markersize=<span style="color: #d29b67;">8</span>)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Offset for text labels to avoid overlap with the line plot markers</span>
 label_offset = <span style="color: #e7c07b;">max</span>(pca.explained_variance_ratio_) * <span style="color: #d29b67;">0.01</span>  <span style="color: #5d6370; font-style: italic"># 1% of the max PVE</span>
-    
+        
 <span style="color: #5d6370; font-style: italic"># Add PVE labels on each bar</span>
 <span style="color: #c276d9;">for</span> p <span style="color: #c276d9;">in</span> barplot.patches:
-    barplot.text(x=(p.get_x() + p.get_width() / <span style="color: #d29b67;">2.</span>), y=(p.get_height()+label_offset), s=<span style="color: #98c379;">'{:.2%}'</span>.<span style="color: #e7c07b;">format</span>(p.get_height()), ha=<span style="color: #98c379;">"center"</span>, va=<span style="color: #98c379;">"bottom"</span>)
-    
+    barplot.text(x=(p.get_x() + p.get_width() / <span style="color: #d29b67;">2.</span>), y=(p.get_height()+label_offset),
+                    s=<span style="color: #98c379;">'{:.2%}'</span>.<span style="color: #e7c07b;">format</span>(p.get_height()), ha=<span style="color: #98c379;">"center"</span>, va=<span style="color: #98c379;">"bottom"</span>)
+        
 <span style="color: #5d6370; font-style: italic"># Add plot labels</span>
 plt.title(<span style="color: #98c379;">'PCA Scree Plot'</span>)
 plt.xlabel(<span style="color: #98c379;">'Principal Component (PC)'</span>)
@@ -984,8 +985,27 @@ plt.show()
 </div>
 </div>
 </details>
+
+<img src="images/pca_scree_plot.png" width=100%>
+    
 <p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
+
 <p class="subtitle">&#x2756 Feature Loading Values of Principal Components</p>
+
+<details style="width: 100%; margin-top: 10px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #5d6370; font-style: italic"># Displaying the PCA components and loading for each feature</span>
+pca_components = pd.DataFrame(pca.components_, columns=audio_features, index=[<span style="color: #98c379;">f"PC</span><span style="color: #e06c76;">{i}</span><span style="color: #98c379;">"</span> <span style="color: #c276d9;">for</span> i <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">range</span>(<span style="color: #d29b67;">1</span>, <span style="color: #e7c07b;">len</span>(audio_features) + <span style="color: #d29b67;">1</span>)])
+pca_components
+</code></pre>
+</p>
+</div>
+</div>
+</details>
+
 <table class="dataframe" style="font-size: 10pt; overflow-x: auto;">
     <thead>
         <tr style="text-align: right;">
@@ -1188,25 +1208,9 @@ plt.show()
     </tbody>
 </table>
     
-<details style="width: 100%; margin-top: 10px;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
-<pre><code><span style="color: #5d6370; font-style: italic"># Displaying the PCA components and loading for each feature</span>
-pca_components = pd.DataFrame(pca.components_, columns=audio_features, index=[<span style="color: #98c379;">f"PC</span><span style="color: #e06c76;">{i}</span><span style="color: #98c379;">"</span> <span style="color: #c276d9;">for</span> i <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">range</span>(<span style="color: #d29b67;">1</span>, <span style="color: #e7c07b;">len</span>(audio_features) + <span style="color: #d29b67;">1</span>)])
-pca_components
-</code></pre>
-</p>
-</div>
-</div>
-</details>
 <p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
-<br>
     
 <p class="subtitle">&#x2756 PCA Scatterplot across all Genres</p>
-    
-<img src="images/pca_scatterplot.png" width=70%>
     
 <details style="width: 100%; margin-top: 10px;">
 <summary class="toggle">[Show Code]</summary>
@@ -1219,31 +1223,31 @@ Plotting the PCA distribution for tracks across genres
 <span style="color: #5d6370; font-style: italic"># Adding PCA results back to the dataframe</span>
 spotify_data[<span style="color: #98c379;">'PC1'</span>] = audio_data_pca[:, <span style="color: #d29b67;">0</span>]
 spotify_data[<span style="color: #98c379;">'PC2'</span>] = audio_data_pca[:, <span style="color: #d29b67;">1</span>]
-    
+        
 <span style="color: #5d6370; font-style: italic"># Set up plot figure</span>
 fig, axes = plt.subplots(<span style="color: #d29b67;">2</span>, <span style="color: #d29b67;">3</span>, figsize=(<span style="color: #d29b67;">15</span>, <span style="color: #d29b67;">10</span>))
-    
+        
 <span style="color: #5d6370; font-style: italic"># Plotting the main scatterplot with all genres</span>
 sns.scatterplot(ax=axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>], data=spotify_data, x=<span style="color: #98c379;">'PC1'</span>, y=<span style="color: #98c379;">'PC2'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_title(<span style="color: #98c379;">'PCA Distribution - All Genres'</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_xlabel(<span style="color: #98c379;">'PC1'</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_ylabel(<span style="color: #98c379;">'PC2'</span>)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Hide the empty plots at the sides of the main plot</span>
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">0</span>].axis(<span style="color: #98c379;">'off'</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">2</span>].axis(<span style="color: #98c379;">'off'</span>)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Plot the scatterplots of each genre separately</span>
 <span style="color: #c276d9;">for</span> i, genre <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">enumerate</span>(genre_color_map.keys()):
     <span style="color: #5d6370; font-style: italic"># Filter the data for the genre</span>
     genre_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == genre]
-    
+        
     <span style="color: #5d6370; font-style: italic"># Create a scatter plot for the genre in the bottom row</span>
     sns.scatterplot(ax=axes[<span style="color: #d29b67;">1</span>, i], data=genre_data, x=<span style="color: #98c379;">'PC1'</span>, y=<span style="color: #98c379;">'PC2'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>, legend=<span style="color: #56b6c3;">False</span>)
     axes[<span style="color: #d29b67;">1</span>, i].set_title(<span style="color: #98c379;">f"PCA Distribution - </span><span style="color: #e06c76;">{genre}</span> <span style="color: #98c379;">Genre"</span>)
     axes[<span style="color: #d29b67;">1</span>, i].set_xlabel(<span style="color: #98c379;">'PC1'</span>)
     axes[<span style="color: #d29b67;">1</span>, i].set_ylabel(<span style="color: #98c379;">'PC2'</span>)
-    
+        
 plt.tight_layout()
 plt.savefig(<span style="color: #98c379;">'images/pca_scatterplot.png'</span>)
 plt.show()
@@ -1252,6 +1256,8 @@ plt.show()
 </div>
 </div>
 </details>
+
+<img src="images/pca_scatterplot.png" width=100%>
     
 <p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
@@ -1260,9 +1266,7 @@ plt.show()
 <h3 id="tsne-results"><span class="subsection_title">Results from t-SNE</span></h3>
     
 <p class="subtitle">&#x2756 t-SNE Scatterplot across all Genres</p>
-    
-<img src="images/tsne_scatterplot.png" width=70%>
-    
+
 <details style="width: 100%; margin-top: 10px;">
 <summary class="toggle">[Show Code]</summary>
 <div style="display: flex; justify-content: space-between;">
@@ -1273,39 +1277,39 @@ Applying t-SNE using the scikit-learn library
 '''</span>
 <span style="color: #5d6370; font-style: italic"># Import required library</span>
 <span style="color: #c276d9;">from</span> sklearn.manifold <span style="color: #c276d9;">import</span> TSNE
-    
+        
 <span style="color: #5d6370; font-style: italic"># Fitting the t-SNE model</span>
 tsne = TSNE(n_components=<span style="color: #d29b67;">2</span>, random_state=<span style="color: #d29b67;">0</span>)
 tsne_features = tsne.fit_transform(audio_data)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Add t-SNE feature data to dataframe</span>
 spotify_data[<span style="color: #98c379;">'tsne_x'</span>] = tsne_features[:,<span style="color: #d29b67;">0</span>]
 spotify_data[<span style="color: #98c379;">'tsne_y'</span>] = tsne_features[:,<span style="color: #d29b67;">1</span>]
-    
+        
 <span style="color: #5d6370; font-style: italic"># Set up plot figure</span>
 fig, axes = plt.subplots(<span style="color: #d29b67;">2</span>, <span style="color: #d29b67;">3</span>, figsize=(<span style="color: #d29b67;">15</span>, <span style="color: #d29b67;">10</span>))
-    
+        
 <span style="color: #5d6370; font-style: italic"># Plotting the main scatterplot with all genres</span>
 sns.scatterplot(ax=axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>], data=spotify_data, x=<span style="color: #98c379;">'tsne_x'</span>, y=<span style="color: #98c379;">'tsne_y'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_title(<span style="color: #98c379;">'t-SNE Distribution - All Genres'</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_xlabel(<span style="color: #98c379;">'x'</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_ylabel(<span style="color: #98c379;">'y'</span>)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Hide the empty plots at the sides of the main plot</span>
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">0</span>].axis(<span style="color: #98c379;">'off'</span>)
 axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">2</span>].axis(<span style="color: #98c379;">'off'</span>)
-    
+        
 <span style="color: #5d6370; font-style: italic"># Plot the scatterplots of each genre separately</span>
 <span style="color: #c276d9;">for</span> i, genre <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">enumerate</span>(genre_color_map.keys()):
     <span style="color: #5d6370; font-style: italic"># Filter the data for the genre</span>
     genre_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == genre]
-    
+        
     <span style="color: #5d6370; font-style: italic"># Create a scatter plot for the genre in the bottom row</span>
     sns.scatterplot(ax=axes[<span style="color: #d29b67;">1</span>, i], data=genre_data, x=<span style="color: #98c379;">'tsne_x'</span>, y=<span style="color: #98c379;">'tsne_y'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>, legend=<span style="color: #56b6c3;">False</span>)
     axes[<span style="color: #d29b67;">1</span>, i].set_title(<span style="color: #98c379;">f"t-SNE Distribution - </span><span style="color: #e06c76;">{genre}</span><span style="color: #98c379;"> Genre"</span>)
     axes[<span style="color: #d29b67;">1</span>, i].set_xlabel(<span style="color: #98c379;">'x'</span>)
     axes[<span style="color: #d29b67;">1</span>, i].set_ylabel(<span style="color: #98c379;">'y'</span>)
-    
+        
 plt.tight_layout()
 plt.savefig(<span style="color: #98c379;">'images/tsne_scatterplot.png'</span>)
 plt.show()
@@ -1315,6 +1319,8 @@ plt.show()
 </div>
 </details>
     
+<img src="images/tsne_scatterplot.png" width="100%;">
+
 <p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <!-- [Discussion] -->
