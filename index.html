@@ -1,10 +1,11 @@
 <!-- Styling -->
 <head>
+<title>Sounds of Virality</title>
 <style>
     button {
         background-color: rgba(69, 74, 83, 0.5); 
         color: MediumSeaGreen;
-        font-size: 175%;
+        font-size: 125%;
         letter-spacing: 3px;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-weight: 500;
@@ -16,8 +17,12 @@
         background-color: #282c35;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: #acb2bf;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.5;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%; 
     }
     pre {
         background-color: #313640; 
@@ -45,6 +50,25 @@
     }
     th, td {
         padding: 10px;
+    }
+    .side {
+        position: fixed; 
+        top: 0;
+        bottom: 0;
+        width: 15%; /* Width of the side columns */
+        background-color: #20232a;
+    }
+    .center-content {
+        margin-left: 15%; /* Same as the width of the left-side */
+        margin-right: 15%; /* Same as the width of the right-side */
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .left-side {
+        left: 0;
+    }
+    .right-side {
+        right: 0;
     }
     .centered-container {
         display: flex;
@@ -86,7 +110,7 @@
         color: #c678dd;
         letter-spacing: 1px;
         font-weight: medium;
-        font-size: 95%;
+        font-size: 80%;
         margin-bottom: 10px;
     }
     .highlight {
@@ -116,12 +140,13 @@
 <!-- README Content -->
     
 <body>
-    
+<div class="side left-side"></div>
+<div class="center-content">
 <a id="readme-top"></a>
     
 <!-- Project Title -->
     
-<h1 style="color: MediumSeaGreen; font-size: 400%; text-align: center; letter-spacing: 7px; margin-bottom: 15px;">Sounds of Virality</h1>
+<h1 style="color: MediumSeaGreen; font-size: 300%; text-align: center; letter-spacing: 7px; margin-bottom: 15px;">Sounds of Virality</h1>
 
 <div class="centered-container">
     <form action="https://github.com/4andrewahn/sounds-of-virality" target="_blank">
@@ -185,15 +210,15 @@
     
 <h3 id="introduction"><span class="subsection_title">&#x1F4A1 Introduction</span></h3>
     
-<p class="paragraph">Nowadays, TikTok has become an essential platform for the music industry. The virality of its short-form content has opened up new avenues for music to reach new audiences, but what exactly is it about the types of music that go viral? Is there a grain of truth when people say a song "<i>sounds like a TikTok song</i>"? These are the questions this project hopes to answer.</p>
+<p>Nowadays, TikTok has become an essential platform for the music industry. The virality of its short-form content has opened up new avenues for music to reach new audiences, but what exactly is it about the types of music that go viral? Is there a grain of truth when people say a song "<i>sounds like a TikTok song</i>"? These are the questions this project hopes to answer.</p>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <h3 id="overview"><span class="subsection_title">&#x1F4D6 Overview</span></h3>
     
 <p>In this investigation of music, we will use Spotify's API to find tracks and collect their audio features to compile into a dataset. We will then explore any differences between genres using <b>Comparative Descriptive Analysis</b> and the dimensionality reduction techniques <b>Principal Component Analysis (PCA)</b> and <b>t-Distributed Stochastic Neighbor Embedding (t-SNE)</b>. From these results, we hope to be able to identify the distinct audio features that correlate most with the 'Viral' genre.</p>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <!-- Audio Features Description -->
 <details>
@@ -305,7 +330,7 @@
         <li><span class="highlight">IPython.display</span> - For clean viewing of pandas dataframes</li>
     </ul>
 </p>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <h3 id="installation-and-setup"><span class="subsection_title">&#x1F4E6 Installation and Setup</span></h3>
     
@@ -327,7 +352,7 @@ To ensure a smooth setup, we recommend creating a virtual environment for the pr
 <blockquote><b>Note:</b> The Python library <span class="highlight">ipykernel</span> may need to be manually installed through <span class="highlight">pip</span> to install the requirements.</blockquote>
     
 </p>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <h3 id="usage"><span class="subsection_title">&#x1F4BB Usage</span></h3>
 <p>
@@ -338,7 +363,7 @@ To use the <b>Session</b> object to communicate with Spotify's API, create a <sp
 CLIENT_SECRET=<span style="color: #98c379;">'YOUR CLIENT SECRET STRING'</span>
 </code></pre>
 </p>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 
 <hr>
 
@@ -393,7 +418,7 @@ To ensure a fair comparison across genres, tracks in the dataset will be pulled 
     </div>
 </details>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <br>
     
@@ -522,7 +547,7 @@ Dataset contains 255 rows
 </div>
 
 <p>Now that we have ensured that the data we have gathered is complete, evenly-distributed, and sufficiently large, the data can be aggregated into a CSV file to be read from later for data analysis.</p>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 <h3 id="data-analysis"><span class="subsection_title">Data Analysis Process</span></h3>
 <blockquote>You can view the full data analysis process and code on <span class="highlight">data_analysis_and_visualization.ipynb</span>.</blockquote>
 <p>To conduct a more comprehensive review, the data analysis process will consist of 3 different statistical approaches: <b>Comparative Descriptive Analysis</b>, <b>Principal Component Analysis (PCA)</b>, and <b>t-Distributed Stochastic Neighbor Embedding (t-SNE)</b>.</p>
@@ -554,7 +579,7 @@ Dataset contains 255 rows
 
 <p>In general, tuning of these hyperparameters can be thought of as a visual process. t-SNE is primarily a visualization tool, so the quality of the results largely depends on how well they reveal insights of the data.</p>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 
 <hr>
 
@@ -567,8 +592,8 @@ Dataset contains 255 rows
 <!-- CDA results -->
 <h3 id="cda-results"><span class="subsection_title">Results from CDA</span></h3>
 <p class="subtitle">&#x2756 Comparative Descriptive Statistics Across Genres</p>
-<div style="display: flex; justify-content: space-between; margin-left: 20pt; margin-right: 20pt; margin-bottom: 10pt;">
-    <div style="width: 32%; text-align: center;">
+<div style="display: flex; justify-content: space-between; margin-left: 20pt; margin-right: 20pt; margin-bottom: 10pt; overflow-x: auto;">
+    <div style="width: 30%; text-align: center;">
         <div>
         <p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Others'</span></p>
         <table class="dataframe">
@@ -644,7 +669,7 @@ Dataset contains 255 rows
     </table>
     </div>
     </div>
-    <div style="width: 32%; text-align: center;">
+    <div style="width: 30%; text-align: center; padding-left: 10px; padding-right: 10px;">
     <div>
     <p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Pop'</span></p>
     <table class="dataframe">
@@ -720,7 +745,7 @@ Dataset contains 255 rows
     </table>
     </div>
     </div>
-    <div style="width: 32%; text-align: center;">
+    <div style="width: 30%; text-align: center;">
     <div>
     <p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Hip-Hop'</span></p>
     <table class="dataframe">
@@ -858,7 +883,7 @@ display(viral_vs_hiphop_stats_sorted)
 </div>
 </div>
 </details>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 <br>
     
 <p class="subtitle">&#x2756 Pair-plot of most distinguishing audio features identified through CDA</p>
@@ -887,7 +912,7 @@ plt.show()
 </div>
 </details>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <!-- PCA results -->
     
@@ -948,7 +973,7 @@ plt.show()
 </div>
 </div>
 </details>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 <p class="subtitle">&#x2756 Feature Loading Values of Principal Components</p>
 <table class="dataframe" style="font-size: 10pt; overflow-x: auto;">
     <thead>
@@ -1165,7 +1190,7 @@ pca_components
 </div>
 </div>
 </details>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 <br>
     
 <p class="subtitle">&#x2756 PCA Scatterplot across all Genres</p>
@@ -1217,7 +1242,7 @@ plt.show()
 </div>
 </details>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <!-- t-SNE results -->
     
@@ -1279,7 +1304,7 @@ plt.show()
 </div>
 </details>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <!-- [Discussion] -->
     
@@ -1293,7 +1318,7 @@ plt.show()
     <li><span style="font-weight: bold; font-size: 110%;">Speechiness</span> - The mean speechiness of the <b>Viral</b> genres was marginally lower when compared to other genres. However, when compared to the mean speechiness of the <b>Hip-Hop</b> genre, the magnitude of the difference seems somewhat more significant.</li>
 </ul>
 <p>Based on these observations, the most distinctive features of the <b>Viral</b> genre seem to be a combination of tempo, key, loudness, and speechiness. Using these audio features, we created a pair-plot to see if any pair of these features can reasonably explain the variances between genres. But no clear distinct pattern could be seen in any plot of audio feature pairs.</p>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 <h3 id="pca-takeaways"><span class="subsection_title">Takeaways from PCA</span></h3>
 <p>The PCA of the audio features in our dataset reveals a few insights about the most distinctive audio features of a track:</p>
 <ul>
@@ -1302,12 +1327,12 @@ plt.show()
     <li><span style="font-weight: bold; font-size: 110%;">PC3</span> - Danceability and valence (the musical positiveness conveyed by a track) are the most influencial features in this component. Both features have strong positive correlations suggesting that tracks that encourage dancing are distinctive in this aspect.</li>
 </ul>
 <p>Unfortunately however, the scree plot does not exhibit a clear elbow-point, indicating that the variance is spread out over several principal components. Specifically, it takes eight principal components to account for 80 percent of the variance, suggesting that the underlying structure of the data is quite complex and not easily captured by linear methods such as PCA.</p>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
 <h3 id="tsne-takeaways"><span class="subsection_title">Takeaways from t-SNE</span></h3>
 
 <p>Through t-SNE analysis, the hope is to uncover meaningful clustering patterns. However, despite extensive efforts to tune key hyperparameters (i.e., perplexity and learning rate), the results did not reveal distinct or meaningful clustering. While t-SNE could be a powerful tool for exploring high-dimensional data, it doesn't always lead to clear clustering. Perhaps the relationships in the dataset are more complex and subtle than could be captured through t-SNE. Further analysis may require the integration of multiple methods and domain-specific expertise to capture the relationships in the data.</p>
     
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <!-- [Closing Thoughts] -->
     
@@ -1321,7 +1346,7 @@ The findings from this analysis indicate that the viral success of a track may n
 <br><br> 
 This conclusion underscores the multifaceted nature of musical popularity, which is shaped more by the interplay of societal, cultural, and market dynamics than any combination of acoustic traits.
 </p>
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
     
 <!-- [Contact] -->
     
@@ -1342,6 +1367,9 @@ This conclusion underscores the multifaceted nature of musical popularity, which
     </form>
 </div>
 
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd; font-size: 80%;">Back to top</a>]</p>
+</div> <!-- Main Column-->
+<div class="side right-side"></div>
+</div> <!-- Page Container --> 
 </body>
     
