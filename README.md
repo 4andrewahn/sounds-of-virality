@@ -1,115 +1,59 @@
-<!-- Styling -->
-
-<style>
-.section_title {
-  color: MediumSeaGreen;
-  letter-spacing: 2px;
-  font-size: 120%;
-}
-.subsection_title {
-  letter-spacing: 2px;
-  font-size: 120%;
-  font-weight: bold; 
-}
-.subtitle {
-  color: MediumSeaGreen;
-  font-weight: medium;
-  letter-spacing: 2px;
-  font-size: 120%;
-}
-.genre-playlist-list {
-	text-align: center;
-	letter-spacing: 2px;
-	text-decoration: underline MediumSeaGreen 2px;
-	text-underline-offset: 50%;
-	margin-top: 5%;
-}
-.label {
-  color: #acb2bf;
-  font-weight: 500;
-  letter-spacing: 1px;
-  font-size: 100%;
-  padding-bottom: 0%;
-}
-.toggle {
-  color: #c678dd;
-  letter-spacing: 1px;
-  font-weight: medium;
-  font-size: 95%;
-  margin-bottom: 10px;
-}
-.dataframe tbody tr th:only-of-type {
-  vertical-align: middle;
-  text-align: left;
-}
-.dataframe tbody tr th {
-  vertical-align: top;
-  text-align: left;
-}
-.dataframe thead th {
-  text-align: center;
-  background-color: rgba(60, 179, 113, 0.2); /* MediumSeaGreen with alpha of 0.2 */
-}
-</style>
-
 <!-- README Content -->
 
 <body>
-
-<div style="background-color: #282c35; padding: 20px">
 
 <a id="readme-top"></a>
 
 <!-- Project Title -->
 
-<h1 style="color: MediumSeaGreen; font-size: 400%; text-align: center; letter-spacing: 7px;">Sounds of Virality</h1>
+<h1>Sounds of Virality</h1>
 
 <!-- TABLE OF CONTENTS -->
 
 <details>
-  <summary style="color: #c678dd; letter-spacing: 2px; font-weight: 500;">Table of Contents</summary>
-  <div style="color: #c678dd;">
+  <summary>Table of Contents</summary>
+  <div>
   <ol>
     <li>
-      <a href="#about-the-project"><span style="color: #c678dd;">About The Project</span></a>
+      <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#introduction"><span style="color: #c678dd;">Introduction</span></a></li>
-        <li><a href="#overview"><span style="color: #c678dd;">Overview</span></a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#overview">Overview</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started"><span style="color: #c678dd;">Getting Started</span></a>
+      <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#technologies-and-libraries-used"><span style="color: #c678dd;">Technologies and Libraries Used</span></a></li>
-        <li><a href="#installation-and-setup"><span style="color: #c678dd;">Installation and Setup</span></a></li>
-				<li><a href="#usage"><span style="color: #c678dd;">Usage</span></a></li>
+        <li><a href="#technologies-and-libraries-used">Technologies and Libraries Used</a></li>
+        <li><a href="#installation-and-setup">Installation and Setup</a></li>
+				<li><a href="#usage">Usage</a></li>
       </ul>
     </li>
 		<li>
-      <a href="#methods"><span style="color: #c678dd;">Methods</span></a>
+      <a href="#methods">Methods</a>
       <ul>
-        <li><a href="#data-collection"><span style="color: #c678dd;">Data Collection</span></a></li>
-        <li><a href="#data-analysis"><span style="color: #c678dd;">Data Analysis</span></a></li>
+        <li><a href="#data-collection">Data Collection</a></li>
+        <li><a href="#data-analysis">Data Analysis</a></li>
       </ul>
     </li>
 		<li>
-      <a href="#results"><span style="color: #c678dd;">Results</span></a>
+      <a href="#results">Results</a>
       <ul>
-        <li><a href="#cda-results"><span style="color: #c678dd;">CDA Results</span></a></li>
-        <li><a href="#pca-results"><span style="color: #c678dd;">PCA Results</span></a></li>
-        <li><a href="#tsne-results"><span style="color: #c678dd;">t-SNE Results</span></a></li>
+        <li><a href="#cda-results">CDA Results</a></li>
+        <li><a href="#pca-results">PCA Results</a></li>
+        <li><a href="#tsne-results">t-SNE Results</a></li>
       </ul>
     </li>
 		<li>
-      <a href="#discussion"><span style="color: #c678dd;">Discussion</span></a>
+      <a href="#discussion">Discussion</a>
       <ul>
-        <li><a href="#cda-takeaways"><span style="color: #c678dd;">CDA Takeaways</span></a></li>
-        <li><a href="#pca-takeaways"><span style="color: #c678dd;">PCA Takeaways</span></a></li>
-        <li><a href="#tsne-takeaways"><span style="color: #c678dd;">t-SNE Takeaways</span></a></li>
+        <li><a href="#cda-takeaways">CDA Takeaways</a></li>
+        <li><a href="#pca-takeaways">PCA Takeaways</a></li>
+        <li><a href="#tsne-takeaways">t-SNE Takeaways</a></li>
       </ul>
     </li>
-    <li><a href="#closing-thoughts"><span style="color: #c678dd;">Closing Thoughts</span></a></li>
-    <li><a href="#contact"><span style="color: #c678dd;">Contact</span></a></li>
+    <li><a href="#closing-thoughts">Closing Thoughts</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
   </div>
 </details>
@@ -118,107 +62,107 @@
 
 <!-- [About the Project] -->
 
-<h2 id="about-the-project"><span class="section_title">[About the Project]</span></h2>
+<h2 id="about-the-project">[About the Project]</h2>
 
-<h3 id="introduction"><span class="subsection_title">&#x1F4A1 Introduction</span></h3>
+<h3 id="introduction">&#x1F4A1 Introduction</h3>
 
 Nowadays, TikTok has become an essential platform for the music industry. The virality of its short-form content has opened up new avenues for music to reach new audiences, but what exactly is it about the types of music that go viral? Is there a grain of truth when people say a song "_sounds like a TikTok song_"? These are the questions this project hopes to answer.
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
-<h3 id="overview"><span class="subsection_title">&#x1F4D6 Overview</span></h3>
+<h3 id="overview">&#x1F4D6 Overview</h3>
 
 In this investigation of music, we will use Spotify's API to find tracks and collect their audio features to compile into a dataset. We will then explore any differences between genres using **Comparative Descriptive Analysis** and the dimensionality reduction techniques **Principal Component Analysis (PCA)** and **t-Distributed Stochastic Neighbor Embedding (t-SNE)**. From these results, we hope to be able to identify the distinct audio features that correlate most with the 'Viral' genre.
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
 <!-- Audio Features Description -->
 <details>
-  <summary class="toggle">[See Audio Features Descriptions]</summary>
+  <summary>[See Audio Features Descriptions]</summary>
 	<table>
 		<tr>
-			<th style="text-align:center;font-size:110%;color:MediumSeaGreen;letter-spacing: 1px;">Attribute</th>
-    	<th style="text-align:center;font-size:110%;color:MediumSeaGreen;letter-spacing: 1px;">Type</th>
-    	<th style="font-size:110%;color:MediumSeaGreen;letter-spacing: 1px;">Description</th>
+			<th>Attribute</th>
+    	<th>Type</th>
+    	<th>Description</th>
 		</tr>
 		<tr>
 			<td><code>id</code></td>
-    	<td style="text-align:center;"><i>string</i></td>
+    	<td><i>string</i></td>
     	<td>The unique Spotify ID for each track</td>
 		</tr>
 		<tr>
 			<td><code>acousticness</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>A confidence measure from 0.0 to 1.0 of whether the track is acoustic. A value of 0.0 represents that a track is not acoustic. A 1.0 a track that is acoustic.</td>
 		</tr>
 		<tr>
 			<td><code>danceability</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</td>
 		</tr>
 		<tr>
 			<td><code>energy</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</td>
 		</tr>
 		<tr>
 			<td><code>instrumentalness</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>Predicts whether a track contains no vocals. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</td>
 		</tr>
 		<tr>
 			<td><code>key</code></td>
-    	<td style="text-align:center;"><i>int</i></td>
+    	<td><i>int</i></td>
     	<td>The key the track is in. Integers map to pitches using standard Pitch Class notation. E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1.</td>
 		</tr>
 		<tr>
 			<td><code>liveness</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</td>
 		</tr>
 		<tr>
 			<td><code>loudness</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Values typically range between -60 and 0 db.</td>
 		</tr>
 		<tr>
 			<td><code>mode</code></td>
-    	<td style="text-align:center;"><i>int</i></td>
+    	<td><i>int</i></td>
     	<td>Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.</td>
 		</tr>
 		<tr>
 			<td><code>speechiness</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</td>
 		</tr>
 		<tr>
 			<td><code>tempo</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>The overall estimated tempo of a track in beats per minute (BPM).</td>
 		</tr>
 		<tr>
 			<td><code>time_signature</code></td>
-    	<td style="text-align:center;"><i>int</i></td>
+    	<td><i>int</i></td>
     	<td>An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of '3/4', to '7/4'.</td>
 		</tr>
 		<tr>
 			<td><code>valence</code></td>
-    	<td style="text-align:center;"><i>float</i></td>
+    	<td><i>float</i></td>
     	<td>A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).</td>
 		</tr>
 		<tr>
 			<td><code>name</code></td>
-    	<td style="text-align:center;"><i>string</i></td>
+    	<td><i>string</i></td>
     	<td>The name of the track.</td>
 		</tr>
 		<tr>
 			<td><code>artist</code></td>
-    	<td style="text-align:center;"><i>string</i></td>
+    	<td><i>string</i></td>
     	<td>The primary artist of a track.</td>
 		</tr>
 		<tr>
 			<td><code>genre</code></td>
-    	<td style="text-align:center;"><i>string</i></td>
+    	<td><i>string</i></td>
     	<td>The genre of a track.</td>
 		</tr>
 	</table>
@@ -228,9 +172,9 @@ In this investigation of music, we will use Spotify's API to find tracks and col
 
 <!-- [Getting Started] -->
 
-<h2 id="getting-started"><span class="section_title">[Getting Started]</span></h2>
+<h2 id="getting-started">[Getting Started]</h2>
 
-<h3 id="technologies-and-libraries-used"><span class="subsection_title">&#x1F6E0 Technologies and Libraries Used</spam></h3>
+<h3 id="technologies-and-libraries-used">&#x1F6E0 Technologies and Libraries Used</h3>
 
 This project is coded in **Python** and uses the following libraries:
 
@@ -241,9 +185,9 @@ This project is coded in **Python** and uses the following libraries:
 -   `scikit-learn`: _For applying PCA and t-SNE_
 -   `IPython.display`: _For clean viewing of pandas dataframes_
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top"">Back to top</a>]</p>
 
-<h3 id="installation-and-setup"><span class="subsection_title">&#x1F4E6 Installation and Setup</span></h3>
+<h3 id="installation-and-setup">&#x1F4E6 Installation and Setup</h3>
 
 To ensure a smooth setup, we recommend creating a virtual environment for the project.
 
@@ -267,9 +211,9 @@ To ensure a smooth setup, we recommend creating a virtual environment for the pr
 
     > _**Note:** The Python library `ipykernel` may need to be manually installed through `pip` to install the requirements._
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
-<h3 id="usage"><span class="subsection_title">&#x1F4BB Usage</span></h3>
+<h3 id="usage">&#x1F4BB Usage</h3>
 
 To communicate with Spotify's API, we have defined the **Session** object in `session.py`. This streamlines the process of refreshing authentication tokens and handling large requests by sending multiple API requests with rate limiting.<br>
 
@@ -280,18 +224,18 @@ CLIENT_ID='YOUR CLIENT ID STRING'
 CLIENT_SECRET='YOUR CLIENT SECRET STRING'
 ```
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
 ---
 
 <!-- [Methods] -->
-<h2 id="methods"><span class="section_title">[Methods]</span></h2>
+<h2 id="methods">[Methods]</h2>
 
-<h3 id="data-collection"><span class="subsection_title">Data Collection Process</span></h3>
+<h3 id="data-collection">Data Collection Process</h3>
 
 > You can view the full data collection process and code on `data_collection.ipynb` and `session.py`.
 
-<p class="subtitle">&#x2756 Sample Selection</p>
+<h4>&#x2756 Sample Selection</h4>
 
 The data collection for this project will focus on 3 genres: `Pop`, `Hip-Hop`, and `Viral`. And we will be focusing on only these three genres for a few reasons. Broadly speaking, **Pop** and **Hip-Hop** are two most prevalent and influential music genres in the current music landscape and social media platforms. These genres encompass a wide spectrum of popular music, making them ideal for finding the audio feature patterns most strongly correlated to virality.
 
@@ -302,51 +246,17 @@ To ensure a fair comparison across genres, tracks in the dataset will be pulled 
 
 _**Note:** Certain tracks may appear in multiple playlists within a genre, our API wrapper is designed to prevent duplicate entries._
 
-<details>
-<summary class="toggle">[See selected playlists]</summary>
-<div style="border: 1px solid #acb2bf; margin: 1%; padding: 0.5%">
-<div style="display: flex; justify-content: space-between; margin: 0%;">
-  <!-- Left Column -->
-  <div style="flex-basis: 30%;">
-    <h2 class="genre-playlist-list">Pop Playlists</h2>
-    <p style="margin-left: 25%;"><b>Today's Top Hits</b> - <i>50 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Hot Hits USA</b> - <i>50 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Pop Rising</b> - <i>85 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Top Songs USA</b> - <i>50 songs</i></p>
-	  <p style="margin-left: 25%;"><b>tean beats</b> - <i>104 songs</i></p>
-  </div>
-  <!-- Middle Column -->
-  <div style="flex-basis: 30%;">
-    <h2 class="genre-playlist-list">Hip-Hop Playlists</h2>
-    <p style="margin-left: 25%;"><b>RapCaviar</b> - <i>51 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Feelin' Myself</b> - <i>50 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Most Necessary</b> - <i>100 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Get Turnt</b> - <i>100 songs</i></p>
-  </div>
-  <!-- Right Column -->
-  <div style="flex-basis: 30%;">
-    <h2 class="genre-playlist-list">Viral Playlists</h2>
-    <p style="margin-left: 25%;"><b>Viral Hits</b> - <i>76 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Hits de Internet</b> - <i>100 songs</i></p>
-	  <p style="margin-left: 25%;"><b>Internet People</b> - <i>100 songs</i></p>
-  </div>
-</div>
-</div>
-</details>
-
 <p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
 
 <br>
 
-<p class="subtitle">&#x2756 Validate Created Dataset</p>
+<h4>&#x2756 Validate Created Dataset</h4>
 
 Once the dataset has been collected, we must verify its contents before moving onto the data analysis process. The first step was to ensure that **each genre was sampled from equally** and that **enough total tracks were collected**. With 12 audio features to analyze, we can follow a general rule of thumb and define a minimum of 120 tracks in the dataset of each genre (360 tracks total). We can verify that the data collected for this project satisfies both criteria using a Python snippet.
 
-<!-- Data sampling verification code snippet -->
-<div style="display: flex; justify-content: flex-start;">
-<div style="flex: 0 0; white-space: nowrap; width: 500px;">
-<p>
-<span class="label">Code Output:</span>
+<!-- Data sampling verification code output -->
+
+**Code Output:**
 
 ```
 Total track recorded: 708
@@ -355,44 +265,15 @@ Hip-Hop: 236 tracks, 33.33% of total dataset
 Viral: 255 tracks, 36.02% of total dataset
 ```
 
-</p>
-</div>
-</div>
-
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
-
-```py
-num_pop = len(pop_data)
-num_hiphop = len(hiphop_data)
-num_viral = len(viral_data)
-total = num_pop + num_hiphop + num_viral
-
-print(f'Total track recorded: {total}')
-print(f'Pop: {num_pop} tracks, {round(((num_pop / total) * 100), 2)}% of total dataset')
-print(f'Hip-Hop: {num_hiphop} tracks, {round(((num_hiphop / total) * 100), 2)}% of total dataset')
-print(f'Viral: {num_viral} tracks, {round(((num_viral / total) * 100), 2)}% of total dataset')
-```
-
-</p>
-</div>
-</div>
-</details>
-
 <br>
 
 <!-- No missing value verification -->
 
 After checking the distribution of each genre in the sampling of our complete dataset, we use our Session API wrapper again to collect the audio feature data for every track. In this process, the Session wrapper aggregates the responses from multiple API calls and returns the audio data as a list of dictionaries where each dictionary contains the key-value pairs for all audio attributes and for a track's Spotify ID. We can verify that the resulting audio data collected for each genre **does not contain any null values** by using another Python snippet.
 
-<!-- No missing value verification code snippet-->
-<div style="display: flex; justify-content: flex-start;">
-<div style="flex: 0 0; white-space: nowrap; width: 500px;">
-<p>
-<span class="label">Code Output:</span>
+<!-- No missing value verification code output-->
+
+**Code Output:**
 
 ```
 == Pop dataset ==
@@ -411,135 +292,120 @@ Dataset contains 255 rows
 # of missing values: 0
 ```
 
-</p>
-</div>
-</div>
-
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
-
-```py
-''' Define helper function to validate the collected data '''
-# The expected length for values in our data dictionaries is 15: ['name', 'artist', and 13 ATTRIBUTES]
-def show_missing_data(data):
-    num_entries = len(data)
-    num_rows_with_missing = 0
-    missing_attr_ct = {} # Dictionary to count entries with null data for an attribute
-
-    # Define all expected keys to find in nested data dictionary for each track
-    expected_keys = ATTRIBUTES.copy()
-    expected_keys.extend(['name', 'artist'])
-
-    # Count missing data
-    for entry in data.values():
-        is_row_missing_any = False
-
-        # Check if key in current row is null
-        for key in expected_keys:
-            if key not in entry:
-                # Row is missing value for key
-                is_row_missing_any = True
-                missing_attr_ct[key] = missing_attr_ct.get(key, 0) + 1
-
-        if is_row_missing_any:
-            num_rows_with_missing += 1
-
-    # Print results
-    print(f'Dataset contains {num_entries} rows')
-    print(f'# of rows with missing values: {num_rows_with_missing}')
-    missing_attr_items = missing_attr_ct.items()
-    total_missing = 0
-    if missing_attr_items:
-        # Dataset contains attributes with null entries
-        print('{Missing Attributes : # of null entries}')
-
-        for k, v in missing_attr_items:
-            print(f'\'{k}\' : {v}')
-            total_missing += v
-    print(f'# of missing values: {total_missing}\n')
-
-''' Validate our collected datasets '''
-print('== Pop dataset ==')
-show_missing_data(pop_data)
-
-print('== Hip-Hop dataset ==')
-show_missing_data(hiphop_data)
-
-print('== Viral dataset ==')
-show_missing_data(viral_data)
-```
-
-</p>
-</div>
-</div>
-</details>
-
 Now that we have ensured that the data we have gathered is complete, evenly-distributed, and sufficiently large, the data can be aggregated into a CSV file to be read from later for data analysis.
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
-<h3 id="data-analysis"><span class="subsection_title">Data Analysis Process</span></h3>
+<h3 id="data-analysis">Data Analysis Process</h3>
 
 > You can view the full data analysis process and code on `data_analysis_and_visualization.ipynb`.
 
 To conduct a more comprehensive review, the data analysis process will consist of 3 different statistical approaches: **Comparative Descriptive Analysis**, **Principal Component Analysis (PCA)**, and **t-Distributed Stochastic Neighbor Embedding (t-SNE)**
 
-<p class="subtitle">&#x2756 Step 1: Comparative Descriptive Analysis (CDA)</p>
+<h4>&#x2756 Step 1: Comparative Descriptive Analysis (CDA)</h4>
 
 Beginning the data analysis process, to get a quick overview of the differences in audio attributes between the genre groups, we will start with comparative descriptive analysis. This is a useful method for quickly comparing key statistical measures between each group. In this investigation, we will be comparing the grouped descriptive statistics between the genres 'Viral', 'Pop', and 'Hip-Hop'. And for completeness, we will also be comparing the statistics for the 'Viral' genre compared to the combined statistics of the 'non-Viral' genres.
 
-<p class="subtitle">&#x2756 Step 2: Principal Component Analysis (PCA)</p>
+<h4>&#x2756 Step 2: Principal Component Analysis (PCA)</h4>
 
 After understanding the distinct attributes of each group, PCA is employed to analyze the data further. Note that PCA does not consider class labels. Instead, it focuses on the variance in the data, aiming to find the directions (principal components) that maximize this variance. Using this idea, PCA provides a broader understanding of the overall structure and variability in the data. And while this can be useful, PCA is a linear method and other non-linear methods such as t-SNE may be better suited to capturing more nuanced and non-linear correlations in variance.
 
-<p class="subtitle">&#x2756 Step 3: t-Distributed Stochastic Neighbor Embedding (t-SNE)</p>
+<h4>&#x2756 Step 3: t-Distributed Stochastic Neighbor Embedding (t-SNE)</h4>
 
 t-SNE is a non-linear dimensionality reduction technique often utilized for the visualization of high-dimensional data. In contrast to PCA, which is a linear method, t-SNE primarily focuses on preserving local structures and relationships within the dataset. This is achieved by effectively maintaining the relative distances between nearby points when reducing dimensions, allowing t-SNE to capture non-linear relationships. This makes t-SNE a suitable alternative for analyzing datasets where variance is broadly distributed across many dimensions, offering a different perspective for finding insights.
 
 Important hyperparameters to keep in mind are 'perplexity' and 'learning rate'. These hyperparameters can have significant impact on the results and so, careful tuning is needed. For a quick overview,
 
-<h5><span class="subsection_title">'Perplexity'</span></h3>
+<h5>'Perplexity'</h3>
 
--   <span style="font-weight: bold; font-size: 110%;">Role</span>: It is a measure of how many close neighbors each point has. Perplexity has a large effect on the resulting plot and can be thought of as a the balancing of local and global aspects of the data.
+-   **Role:** It is a measure of how many close neighbors each point has. Perplexity has a large effect on the resulting plot and can be thought of as a the balancing of local and global aspects of the data.
+-   **Typical Range:** Usually between 5 and 50, but larger dataset may require more.
+-   **Tuning:** If the plot looks overly fragmented or too "noisy", _reduce_ the perplexity. If the plot looks too "clumpy" and not enough structure is visible, _increase_ the perplexity. Look for a value where clusters in the plot seem well-separated and meaningful, without being too fragmented.
 
--   <span style="font-weight: bold; font-size: 110%;">Typical Range</span>: Usually between 5 and 50, but larger dataset may require more.
+<h5>'Learning Rate'</h3>
 
--   <span style="font-weight: bold; font-size: 110%;">Tuning</span>: If the plot looks overly fragmented or too "noisy", _reduce_ the perplexity. If the plot looks too "clumpy" and not enough structure is visible, _increase_ the perplexity. Look for a value where clusters in the plot seem well-separated and meaningful, without being too fragmented.
-
-<h5><span class="subsection_title">'Learning Rate'</span></h3>
-
--   <span style="font-weight: bold; font-size: 110%;">Role</span>: This controls how much the model changes with each iteration. Learning rate affects the convergence of the model; a very _high_ learning rate may cause the model to converge too quickly and reach a suboptimal solution, while a very _low_ rate may slow down the convergence excessively.
-
--   <span style="font-weight: bold; font-size: 110%;">Typical Range</span>: Typically between 10 and 1000.
-
--   <span style="font-weight: bold; font-size: 110%;">Tuning</span>: If the resulting plot looks too chaotic or points seem to crowd together, _lower_ the learning rate. If the model doesn't seem to converge (i.e., the plot changes a lot with each iteration), _increase_ the learning rate.
+-   **Role:** This controls how much the model changes with each iteration. Learning rate affects the convergence of the model; a very _high_ learning rate may cause the model to converge too quickly and reach a suboptimal solution, while a very _low_ rate may slow down the convergence excessively.
+-   **Typical Range:** Typically between 10 and 1000.
+-   **Tuning:** If the resulting plot looks too chaotic or points seem to crowd together, _lower_ the learning rate. If the model doesn't seem to converge (i.e., the plot changes a lot with each iteration), _increase_ the learning rate.
 
 In general, tuning of these hyperparameters can be thought of as a visual process. t-SNE is primarily a visualization tool, so the quality of the results largely depends on how well they reveal insights of the data.
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
 ---
 
 <!-- [Results] -->
 
-<h2 id="results"><span class="section_title">[Results]</span></h2>
+<h2 id="results">[Results]</h2>
 
 > **Note:** The results have been calculated using Spotify data that was collected on **Nov 11, 2023**.
 
 <!-- CDA results -->
 
-<h3 id="cda-results"><span class="subsection_title">Results from CDA</span></h3>
+<h3 id="cda-results">Results from CDA</h3>
 
-<p class="subtitle">&#x2756 Comparative Descriptive Statistics Across Genres</p>
+<h4>&#x2756 Comparative Descriptive Statistics Across Genres</h4>
 
-<div style="display: flex; justify-content: space-between; padding: 10px;">
-<div style="width: 31%; text-align: center;">
-<div>
-<p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Others'</span></p>
-<table class="dataframe">
+<details>
+<summary>[Show Code]</summary>
+
+```py
+'''
+Comparative Descriptive Analysis
+'''
+# Split dataset into smaller datasets grouped by 'genre'
+viral_data = spotify_data[spotify_data['genre'] == 'Viral']
+viral_audio_data = viral_data[audio_features]
+
+other_data = spotify_data[spotify_data['genre'] != 'Viral']
+other_audio_data = other_data[audio_features]
+
+pop_data = spotify_data[spotify_data['genre'] == 'Pop']
+pop_audio_data = pop_data[audio_features]
+
+hiphop_data = spotify_data[spotify_data['genre'] == 'Hip-Hop']
+hiphop_audio_data = hiphop_data[audio_features]
+
+
+# Compute descriptive statistics of each genre group
+viral_audio_stats = viral_audio_data.describe().loc[['mean', 'std']]
+other_audio_stats = other_audio_data.describe().loc[['mean', 'std']]
+pop_audio_stats = pop_audio_data.describe().loc[['mean', 'std']]
+hiphop_audio_stats = hiphop_audio_data.describe().loc[['mean', 'std']]
+
+
+# Compare the descriptive statistics of the 'Viral' genre with other genres
+viral_vs_other_stats = viral_audio_stats - other_audio_stats
+viral_vs_pop_stats = viral_audio_stats - pop_audio_stats
+viral_vs_hiphop_stats = viral_audio_stats - hiphop_audio_stats
+
+
+# Sort the comparative statistics for easier interpretation
+viral_vs_other_stats_T = viral_vs_other_stats.T
+viral_vs_other_stats_sorted = viral_vs_other_stats_T.reindex(viral_vs_other_stats_T['mean'].abs().sort_values(ascending=False).index)
+
+viral_vs_pop_stats_T = viral_vs_pop_stats.T
+viral_vs_pop_stats_sorted = viral_vs_pop_stats_T.reindex(viral_vs_pop_stats_T['mean'].abs().sort_values(ascending=False).index)
+
+viral_vs_hiphop_stats_T = viral_vs_hiphop_stats.T
+viral_vs_hiphop_stats_sorted = viral_vs_hiphop_stats_T.reindex(viral_vs_hiphop_stats_T['mean'].abs().sort_values(ascending=False).index)
+
+
+# Display results
+print('Viral vs Other genres')
+display(viral_vs_other_stats_sorted)
+
+print('Viral vs Pop')
+display(viral_vs_pop_stats_sorted)
+
+print('Viral vs HipHop')
+display(viral_vs_hiphop_stats_sorted)
+```
+
+</details>
+
+<h5>'Viral' vs 'Others'</h5>
+<table>
   <thead>
     <tr>
       <th></th>
@@ -610,12 +476,9 @@ In general, tuning of these hyperparameters can be thought of as a visual proces
     </tr>
   </tbody>
 </table>
-</div>
-</div>
-<div style="width: 31%; text-align: center;">
-<div>
-<p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Pop'</span></p>
-<table class="dataframe">
+
+<h5>'Viral' vs 'Pop'</h5>
+<table>
   <thead>
     <tr>
       <th></th>
@@ -686,12 +549,9 @@ In general, tuning of these hyperparameters can be thought of as a visual proces
     </tr>
   </tbody>
 </table>
-</div>
-</div>
-<div style="width: 31%; text-align: center;">
-<div>
-<p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Hip-Hop'</span></p>
-<table class="dataframe">
+
+<h5>'Viral' vs 'Hip-Hop'</h5>
+<table>
   <thead>
     <tr>
       <th></th>
@@ -762,85 +622,13 @@ In general, tuning of these hyperparameters can be thought of as a visual proces
     </tr>
   </tbody>
 </table>
-</div>
-</div>
-</div>
-
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
-
-```py
-'''
-Comparative Descriptive Analysis
-'''
-# Split dataset into smaller datasets grouped by 'genre'
-viral_data = spotify_data[spotify_data['genre'] == 'Viral']
-viral_audio_data = viral_data[audio_features]
-
-other_data = spotify_data[spotify_data['genre'] != 'Viral']
-other_audio_data = other_data[audio_features]
-
-pop_data = spotify_data[spotify_data['genre'] == 'Pop']
-pop_audio_data = pop_data[audio_features]
-
-hiphop_data = spotify_data[spotify_data['genre'] == 'Hip-Hop']
-hiphop_audio_data = hiphop_data[audio_features]
-
-
-# Compute descriptive statistics of each genre group
-viral_audio_stats = viral_audio_data.describe().loc[['mean', 'std']]
-other_audio_stats = other_audio_data.describe().loc[['mean', 'std']]
-pop_audio_stats = pop_audio_data.describe().loc[['mean', 'std']]
-hiphop_audio_stats = hiphop_audio_data.describe().loc[['mean', 'std']]
-
-
-# Compare the descriptive statistics of the 'Viral' genre with other genres
-viral_vs_other_stats = viral_audio_stats - other_audio_stats
-viral_vs_pop_stats = viral_audio_stats - pop_audio_stats
-viral_vs_hiphop_stats = viral_audio_stats - hiphop_audio_stats
-
-
-# Sort the comparative statistics for easier interpretation
-viral_vs_other_stats_T = viral_vs_other_stats.T
-viral_vs_other_stats_sorted = viral_vs_other_stats_T.reindex(viral_vs_other_stats_T['mean'].abs().sort_values(ascending=False).index)
-
-viral_vs_pop_stats_T = viral_vs_pop_stats.T
-viral_vs_pop_stats_sorted = viral_vs_pop_stats_T.reindex(viral_vs_pop_stats_T['mean'].abs().sort_values(ascending=False).index)
-
-viral_vs_hiphop_stats_T = viral_vs_hiphop_stats.T
-viral_vs_hiphop_stats_sorted = viral_vs_hiphop_stats_T.reindex(viral_vs_hiphop_stats_T['mean'].abs().sort_values(ascending=False).index)
-
-
-# Display results
-print('Viral vs Other genres')
-display(viral_vs_other_stats_sorted)
-
-print('Viral vs Pop')
-display(viral_vs_pop_stats_sorted)
-
-print('Viral vs HipHop')
-display(viral_vs_hiphop_stats_sorted)
-```
-
-</p>
-</div>
-</div>
-</details>
 
 <br>
 
-<p class="subtitle">&#x2756 Pair-plot of most distinguishing audio features identified through CDA</p>
+<h4>&#x2756 Pair-plot of most distinguishing audio features identified through CDA</h4>
 
-<img src="images/pairplot.png" width=70%>
-
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
+<details>
+<summary>[Show Code]</summary>
 
 ```py
 '''
@@ -856,26 +644,20 @@ pair_plot.fig.suptitle('Pair-plots of most distinctive features of the \'Viral\'
 plt.show()
 ```
 
-</p>
-</div>
-</div>
 </details>
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<img src="images/pairplot.png" width=70%>
+
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
 <!-- PCA results -->
 
-<h3 id="pca-results"><span class="subsection_title">Results from PCA</span></h3>
+<h3 id="pca-results">Results from PCA</h3>
 
-<p class="subtitle">&#x2756 Scree Plot</p>
+<h4>&#x2756 Scree Plot</h4>
 
-<img src="images/pca_scree_plot.png" width=70%>
-
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
+<details>
+<summary>[Show Code]</summary>
 
 ```py
 '''
@@ -921,18 +703,28 @@ plt.savefig('images/pca_scree_plot.png')
 plt.show()
 ```
 
-</p>
-</div>
-</div>
 </details>
+
+<img src="images/pca_scree_plot.png" width=70%>
 
 <br>
 
-<p class="subtitle">&#x2756 Feature Loading Values of Principal Components</p>
+<h4>&#x2756 Feature Loading Values of Principal Components</h4>
 
-<table class="dataframe">
+<details>
+<summary>[Show Code]</summary>
+
+```py
+# Displaying the PCA components and loading for each feature
+pca_components = pd.DataFrame(pca.components_, columns=audio_features, index=[f"PC{i}" for i in range(1, len(audio_features) + 1)])
+pca_components
+```
+
+</details>
+
+<table>
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>acousticness</th>
       <th>danceability</th>
@@ -1132,26 +924,9 @@ plt.show()
   </tbody>
 </table>
 
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
-
-```py
-# Displaying the PCA components and loading for each feature
-pca_components = pd.DataFrame(pca.components_, columns=audio_features, index=[f"PC{i}" for i in range(1, len(audio_features) + 1)])
-pca_components
-```
-
-</p>
-</div>
-</div>
-</details>
-
 <br>
 
-<p class="subtitle">&#x2756 PCA Scatterplot across all Genres</p>
+<h4>&#x2756 PCA Scatterplot across all Genres</h4>
 
 <img src="images/pca_scatterplot.png" width=70%>
 
@@ -1203,21 +978,18 @@ plt.show()
 </div>
 </details>
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
 <!-- t-SNE results -->
 
-<h3 id="tsne-results"><span class="subsection_title">Results from t-SNE</span></h3>
+<h3 id="tsne-results">Results from t-SNE</h3>
 
-<p class="subtitle">&#x2756 t-SNE Scatterplot across all Genres</p>
+<h4>&#x2756 t-SNE Scatterplot across all Genres</h4>
 
 <img src="images/tsne_scatterplot.png" width=70%>
 
-<details style="width: 100%;">
-<summary class="toggle">[Show Code]</summary>
-<div style="display: flex; justify-content: space-between;">
-<div style="flex: 0 0; width: 100%; white-space: nowrap;">
-<p>
+<details>
+<summary>[Show Code]</summary>
 
 ```py
 '''
@@ -1263,50 +1035,51 @@ plt.savefig('images/tsne_scatterplot.png')
 plt.show()
 ```
 
-</p>
-</div>
-</div>
 </details>
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
+
+---
 
 <!-- [Discussion] -->
 
-<h2 id="discussion"><span class="section_title">[Discussion]</span></h2>
+<h2 id="discussion">[Discussion]</h2>
 
-<h3 id="cda-takeaways"><span class="subsection_title">Takeaways from CDA</span></h3>
+<h3 id="cda-takeaways">Takeaways from CDA</h3>
 
--   <span style="font-weight: bold; font-size: 110%;">Tempo</span> - The mean tempo in the 'Viral' genre is slightly lower than the mean for other genres. More specifically, the 'Viral' genre has a slighty higher mean tempo than tracks in the 'Pop' genre. But compared to the 'Hip-Hop' genre, tracks in the 'Viral' genre are noteably slower.
+-   **Tempo** - The mean tempo in the 'Viral' genre is slightly lower than the mean for other genres. More specifically, the 'Viral' genre has a slighty higher mean tempo than tracks in the 'Pop' genre. But compared to the 'Hip-Hop' genre, tracks in the 'Viral' genre are noteably slower.
 
--   <span style="font-weight: bold; font-size: 110%;">Key</span> - While the mean key of the 'Viral' genre seems higher than the 'Hip-Hop' genre, it is slightly lower when compared to the 'Pop' genre. And compared to both other genres, the mean key of the 'Viral' genre is a bit higher.
+-   **Key** - While the mean key of the 'Viral' genre seems higher than the 'Hip-Hop' genre, it is slightly lower when compared to the 'Pop' genre. And compared to both other genres, the mean key of the 'Viral' genre is a bit higher.
 
--   <span style="font-weight: bold; font-size: 110%;">Loudness</span> - Across the board, the 'Viral' genre is slightly softer than both the 'Pop' and 'Hip-Hop' genres to the same degree.
+-   **Loudness** - Across the board, the 'Viral' genre is slightly softer than both the 'Pop' and 'Hip-Hop' genres to the same degree.
 
--   <span style="font-weight: bold; font-size: 110%;">Speechiness</span> - The mean speechiness of the 'Viral' genres was marginally lower when compared to other genres. However, when compared to the mean speechiness of the 'Hip-Hop' genre, the magnitude of the difference seems somewhat more significant.
+-   **Speechiness** - The mean speechiness of the 'Viral' genres was marginally lower when compared to other genres. However, when compared to the mean speechiness of the 'Hip-Hop' genre, the magnitude of the difference seems somewhat more significant.
 
 Based on these observations, the most distinctive features of the 'Viral' genre seem to be a combination of tempo, key, loudness, and speechiness. Using these audio features, we created a pair-plot to see if any pair of these features can reasonably explain the variances between genres. But no clear distinct pattern could be seen in any plot of audio feature pairs.
 
-<h3 id="pca-takeaways"><span class="subsection_title">Takeaways from PCA</span></h3>
+<h3 id="pca-takeaways">Takeaways from PCA</h3>
 
 The PCA of the audio features in our dataset reveals a few insights about the most distinctive audio features of a track:
 
--   <span style="font-weight: bold; font-size: 110%;">PC1</span> - This component is most strongly influenced by acousticness, energy, and loudness. Acousticness has a strong positive correlation, while energy and loudness have strong negative correlations. This suggests that tracks that are more acoustic tend to hand less energy and are quieter.
+-   **PC1** - This component is most strongly influenced by acousticness, energy, and loudness. Acousticness has a strong positive correlation, while energy and loudness have strong negative correlations. This suggests that tracks that are more acoustic tend to hand less energy and are quieter.
 
--   <span style="font-weight: bold; font-size: 110%;">PC2</span> - Here, the key, speechiness, and time signature play significant roles. The key has a strong positive correlation, while speechiness and time signature have strong negative correlations. This component captures variations in tracks based on their harmonic structure (key and time signature) and their lyrical content (speechiness).
+-   **PC2** - Here, the key, speechiness, and time signature play significant roles. The key has a strong positive correlation, while speechiness and time signature have strong negative correlations. This component captures variations in tracks based on their harmonic structure (key and time signature) and their lyrical content (speechiness).
 
--   <span style="font-weight: bold; font-size: 110%;">PC3</span> - Danceability and valence (the musical positiveness conveyed by a track) are the most influencial features in this component. Both features have strong positive correlations suggesting that tracks that encourage dancing are distinctive in this aspect.
+-   **PC3** - Danceability and valence (the musical positiveness conveyed by a track) are the most influencial features in this component. Both features have strong positive correlations suggesting that tracks that encourage dancing are distinctive in this aspect.
 
 Unfortunately however, the scree plot does not exhibit a clear elbow-point, indicating that the variance is spread out over several principal components. Specifically, it takes eight principal components to account for 80 percent of the variance, suggesting that the underlying structure of the data is quite complex and not easily captured by linear methods such as PCA.
 
-<h3 id="tsne-takeaways"><span class="subsection_title">Takeaways from t-SNE</span></h3>
+<h3 id="tsne-takeaways">Takeaways from t-SNE</h3>
 
 Through t-SNE analysis, the hope is to uncover meaningful clustering patterns. However, despite extensive efforts to tune key hyperparameters (i.e., perplexity and learning rate), the results did not reveal distinct or meaningful clustering. While t-SNE could be a powerful tool for exploring high-dimensional data, it doesn't always lead to clear clustering. Perhaps the relationships in the dataset are more complex and subtle than could be captured through t-SNE. Further analysis may require the integration of multiple methods and domain-specific expertise to capture the relationships in the data.
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
+
+---
 
 <!-- [Closing Thoughts] -->
 
-<h2 id="closing-thoughts"><span class="section_title">[Closing Thoughts]</span></h2>
+<h2 id="closing-thoughts">[Closing Thoughts]</h2>
 
 The goal of this analysis was to identify the distinguishing audio feature of 'viral' music in comparison to established genres such as pop and hip-hop. Analysis of the data collected from Spotify's API consisted of comparative descriptive analysis, PCA, and t-SNE.
 
@@ -1316,24 +1089,23 @@ The findings from this analysis indicate that the viral success of a track may n
 
 This conclusion underscores the multifaceted nature of musical popularity, which is shaped more by the interplay of societal, cultural, and market dynamics than any combination of acoustic traits.
 
-<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
+
+---
 
 <!-- [Contact] -->
 
-<h2 id="contact"><span class="section_title">[Contact]</span></h2>
+<h2 id="contact">[Contact]</h2>
 
-<p>Hi, I'm currently exploring new opportunities and working on projects that showcase my technical skills as I prepare to step into an entry-level data science role. If you want to see more of my projects, follow this link to my <a href="http://www.andrewahn.info" style="color:MediumSeaGreen;">personal website</a>. If you're a recruiter or if you have any questions or feedback about my projects, please feel free to reach out!</p>
+<p>Hi, I'm currently exploring new opportunities and working on projects that showcase my technical skills as I prepare to step into an entry-level data science role. If you want to see more of my projects, follow this link to my <a href="http://www.andrewahn.info">personal website</a>. If you're a recruiter or if you have any questions or feedback about my projects, please feel free to reach out!</p>
 
 <p>You can connect with me via:</p>
 
 <ul>
-    <li><b>Email:</b> <a href="mailto:4andrewahn@gmail.com"style="color:MediumSeaGreen;">4andrewahn@gmail.com</a></li>
-    <li><b>LinkedIn:</b> <a href="http://www.linkedin.com/in/4andrewahn"style="color:MediumSeaGreen;">linkedin.com/in/4andrewahn</a></li>
-    <li><b>GitHub:</b> <a href="http://github.com/4andrewahn"style="color:MediumSeaGreen;">github.com/4andrewahn</a></li>
+    <li><b>Email:</b> <a href="mailto:4andrewahn@gmail.com">4andrewahn@gmail.com</a></li>
+    <li><b>LinkedIn:</b> <a href="http://www.linkedin.com/in/4andrewahn">linkedin.com/in/4andrewahn</a></li>
 </ul>
 
-<p align="right">[<a href="#readme-top", style="color:#c678dd;">Back to top</a>]</p>
-
-</div>
+<p align="right">[<a href="#readme-top">Back to top</a>]</p>
 
 </body>

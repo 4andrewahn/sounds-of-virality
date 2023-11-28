@@ -1,0 +1,1347 @@
+<!-- Styling -->
+<head>
+<style>
+    button {
+        background-color: rgba(69, 74, 83, 0.5); 
+        color: MediumSeaGreen;
+        font-size: 175%;
+        letter-spacing: 3px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        border: 2px solid #798398;
+        border-radius: 8px; 
+        padding: 8px 30px;
+    }
+    body {
+        background-color: #282c35;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #acb2bf;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    pre {
+        background-color: #313640; 
+        border-radius: 4px; 
+        padding: 10px;
+        overflow-x: auto; 
+    }
+    code {
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace; 
+        font-size: 12px;
+        color: #acb2bf;
+        white-space: pre; 
+    }
+    blockquote {
+        border-left: 4px solid #4b5362; 
+        margin-left: 0;
+        padding-left: 8pt;
+        padding-top: 4pt;
+        padding-bottom: 4pt;
+        color: #798398; 
+    }
+    table, th, td {
+        border: 1px solid #acb2bf;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+    .centered-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: top;
+    }
+    .section_title {
+        color: MediumSeaGreen;
+        letter-spacing: 2px;
+        font-size: 120%;
+    }
+    .subsection_title {
+        letter-spacing: 2px;
+        font-size: 120%;
+        font-weight: bold; 
+    }
+    .subtitle {
+        color: MediumSeaGreen;
+        font-weight: medium;
+        letter-spacing: 2px;
+        font-size: 120%;
+    }
+    .genre-playlist-list {
+        text-align: center;
+        letter-spacing: 2px;
+        text-decoration: underline MediumSeaGreen 2px;
+        text-underline-offset: 50%;
+        margin-top: 5%;
+    }
+    .label {
+        color: #acb2bf;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-size: 100%;
+        padding-bottom: 0%;
+    }
+    .toggle {
+        color: #c678dd;
+        letter-spacing: 1px;
+        font-weight: medium;
+        font-size: 95%;
+        margin-bottom: 10px;
+    }
+    .highlight {
+        font-family: 'Courier New', monospace; 
+        font-weight: 500;
+        background-color: #3a3f4b; 
+        padding: 2px 4px; 
+        border-radius: 4px; 
+        color: #acb2bf; 
+    }
+    .dataframe tbody tr th:only-of-type {
+      vertical-align: middle;
+      text-align: left;
+    }
+    .dataframe tbody tr th {
+      vertical-align: top;
+      text-align: left;
+      padding: 10px;
+    }
+    .dataframe thead th {
+      text-align: center;
+      background-color: rgba(60, 179, 113, 0.2); /* MediumSeaGreen with alpha of 0.2 */
+    }
+</style>
+</head>
+
+<!-- README Content -->
+    
+<body>
+    
+<a id="readme-top"></a>
+    
+<!-- Project Title -->
+    
+<h1 style="color: MediumSeaGreen; font-size: 400%; text-align: center; letter-spacing: 7px; margin-bottom: 15px;">Sounds of Virality</h1>
+
+<div class="centered-container">
+    <form action="https://github.com/4andrewahn/sounds-of-virality" target="_blank">
+        <button onclick="submit">See GitHub</button>
+    </form>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+    
+<details>
+    <summary style="color: #c678dd; letter-spacing: 2px; font-weight: 500;">Table of Contents</summary>
+    <div style="color: #c678dd;">
+    <ol>
+    <li>
+        <a href="#about-the-project" style="color: #c678dd;">About The Project</a>
+        <ul>
+            <li><a href="#introduction" style="color: #c678dd;">Introduction</a></li>
+            <li><a href="#overview" style="color: #c678dd;">Overview</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#getting-started" style="color: #c678dd;">Getting Started</a>
+        <ul>
+            <li><a href="#technologies-and-libraries-used" style="color: #c678dd;">Technologies and Libraries Used</a></li>
+            <li><a href="#installation-and-setup" style="color: #c678dd;">Installation and Setup</a></li>
+            <li><a href="#usage" style="color: #c678dd;">Usage</a></li>
+        </ul>
+    </li>
+        <li>
+            <a href="#methods" style="color: #c678dd;">Methods</a>
+            <ul>
+                <li><a href="#data-collection" style="color: #c678dd;">Data Collection</a></li>
+                <li><a href="#data-analysis" style="color: #c678dd;">Data Analysis</a></li>
+            </ul>
+        </li>
+    <li>
+        <a href="#results" style="color: #c678dd;">Results</a>
+            <ul>
+                <li><a href="#cda-results" style="color: #c678dd;">CDA Results</a></li>
+                <li><a href="#pca-results" style="color: #c678dd;">PCA Results</a></li>
+                <li><a href="#tsne-results" style="color: #c678dd;">t-SNE Results</a></li>
+            </ul>
+        </li>
+    <li>
+        <a href="#discussion" style="color: #c678dd;">Discussion</a>
+            <ul>
+                <li><a href="#cda-takeaways" style="color: #c678dd;">CDA Takeaways</a></li>
+                <li><a href="#pca-takeaways" style="color: #c678dd;">PCA Takeaways</a></li>
+                <li><a href="#tsne-takeaways" style="color: #c678dd;">t-SNE Takeaways</a></li>
+            </ul>
+        </li>
+    <li><a href="#closing-thoughts" style="color: #c678dd;">Closing Thoughts</a></li>
+    <li><a href="#contact" style="color: #c678dd;">Contact</a></li>
+    </ol>
+    </div>
+</details>
+    
+<!-- [About the Project] -->
+    
+<h2 id="about-the-project"><span class="section_title">[About the Project]</span></h2>
+    
+<h3 id="introduction"><span class="subsection_title">&#x1F4A1 Introduction</span></h3>
+    
+<p class="paragraph">Nowadays, TikTok has become an essential platform for the music industry. The virality of its short-form content has opened up new avenues for music to reach new audiences, but what exactly is it about the types of music that go viral? Is there a grain of truth when people say a song "<i>sounds like a TikTok song</i>"? These are the questions this project hopes to answer.</p>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<h3 id="overview"><span class="subsection_title">&#x1F4D6 Overview</span></h3>
+    
+<p>In this investigation of music, we will use Spotify's API to find tracks and collect their audio features to compile into a dataset. We will then explore any differences between genres using <b>Comparative Descriptive Analysis</b> and the dimensionality reduction techniques <b>Principal Component Analysis (PCA)</b> and <b>t-Distributed Stochastic Neighbor Embedding (t-SNE)</b>. From these results, we hope to be able to identify the distinct audio features that correlate most with the 'Viral' genre.</p>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<!-- Audio Features Description -->
+<details>
+    <summary class="toggle">[See Audio Features Descriptions]</summary>
+        <table>
+            <tr>
+                <th style="text-align:left;font-size:110%;color:MediumSeaGreen;letter-spacing: 1px;">Attribute</th>
+            <th style="text-align:left;font-size:110%;color:MediumSeaGreen;letter-spacing: 1px;">Type</th>
+            <th style="text-align:left;font-size:110%;color:MediumSeaGreen;letter-spacing: 1px; text-indent: 10pt;">Description</th>
+            </tr>
+            <tr>
+                <td><code>id</code></td>
+            <td style="text-align:left;"><i>string</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">The unique Spotify ID for each track</td>
+            </tr>
+            <tr>
+                <td><code>acousticness</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">A confidence measure from 0.0 to 1.0 of whether the track is acoustic. A value of 0.0 represents that a track is not acoustic. A 1.0 a track that is acoustic.</td>
+            </tr>
+            <tr>
+                <td><code>danceability</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</td>
+            </tr>
+            <tr>
+                <td><code>energy</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</td>
+            </tr>
+            <tr>
+                <td><code>instrumentalness</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">Predicts whether a track contains no vocals. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</td>
+            </tr>
+            <tr>
+                <td><code>key</code></td>
+            <td style="text-align:left;"><i>int</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">The key the track is in. Integers map to pitches using standard Pitch Class notation. E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1.</td>
+            </tr>
+            <tr>
+                <td><code>liveness</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</td>
+            </tr>
+            <tr>
+                <td><code>loudness</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Values typically range between -60 and 0 db.</td>
+            </tr>
+            <tr>
+                <td><code>mode</code></td>
+            <td style="text-align:left;"><i>int</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.</td>
+            </tr>
+            <tr>
+                <td><code>speechiness</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</td>
+            </tr>
+            <tr>
+                <td><code>tempo</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">The overall estimated tempo of a track in beats per minute (BPM).</td>
+            </tr>
+            <tr>
+                <td><code>time_signature</code></td>
+            <td style="text-align:left;"><i>int</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of '3/4', to '7/4'.</td>
+            </tr>
+            <tr>
+                <td><code>valence</code></td>
+            <td style="text-align:left;"><i>float</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).</td>
+            </tr>
+            <tr>
+                <td><code>name</code></td>
+            <td style="text-align:left;"><i>string</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">The name of the track.</td>
+            </tr>
+            <tr>
+                <td><code>artist</code></td>
+            <td style="text-align:left;"><i>string</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">The primary artist of a track.</td>
+            </tr>
+            <tr>
+                <td><code>genre</code></td>
+            <td style="text-align:left;"><i>string</i></td>
+            <td style="line-height: 1.5; vertical-align: top;">The genre of a track.</td>
+            </tr>
+        </table>
+</details>
+
+<hr>
+
+<!-- [Getting Started] -->
+    
+<h2 id="getting-started"><span class="section_title">[Getting Started]</span></h2>
+    
+<h3 id="technologies-and-libraries-used"><span class="subsection_title">&#x1F6E0 Technologies and Libraries Used</spam></h3>
+<p>
+    This project is coded in <b>Python</b> and uses the following libraries:<br>
+    <ul>
+        <li><span class="highlight">requests</span> - To make API calls to Spotify's API endpoints</li>
+        <li><span class="highlight">python-dotenv</span> - For loading client details from an '<b>.env</b>' file</li>
+        <li><span class="highlight">pandas</span> - For data manipulation and analysis</li>
+        <li><span class="highlight">matplotlib</span>, <span class="highlight">seaborn</span> - For statistical data visualization</li>
+        <li><span class="highlight">scikit-learn</span> - For applying PCA and t-SNE</li>
+        <li><span class="highlight">IPython.display</span> - For clean viewing of pandas dataframes</li>
+    </ul>
+</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<h3 id="installation-and-setup"><span class="subsection_title">&#x1F4E6 Installation and Setup</span></h3>
+    
+<p>
+To ensure a smooth setup, we recommend creating a virtual environment for the project.<br>
+    
+<ol>
+    <li>Create a new virtual environment<br>
+        <pre><code>python -m venv .venv</code></pre>
+    </li>
+    <li>Activate the virtual environment<br>
+        <pre><code><span style="color: #e7c07b;">source</span> .venv/bin/activate</code></pre>
+    </li>
+    <li>Install the required libraries<br>
+        <pre><code>pip install -r requirements.txt</code></pre>
+    </li>
+</ol>
+
+<blockquote><b>Note:</b> The Python library <span class="highlight">ipykernel</span> may need to be manually installed through <span class="highlight">pip</span> to install the requirements.</blockquote>
+    
+</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<h3 id="usage"><span class="subsection_title">&#x1F4BB Usage</span></h3>
+<p>
+To communicate with Spotify's API, we have defined the <b>Session</b> object in <span class="highlight">session.py</span>. This streamlines the process of refreshing authentication tokens and handling large requests by sending multiple API requests with rate limiting.
+<br><br>
+To use the <b>Session</b> object to communicate with Spotify's API, create a <span class="highlight">.env</span> file with the following:<br>
+<pre><code>CLIENT_ID=<span style="color: #98c379;">'YOUR CLIENT ID STRING'</span>
+CLIENT_SECRET=<span style="color: #98c379;">'YOUR CLIENT SECRET STRING'</span>
+</code></pre>
+</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+
+<hr>
+
+<!-- [Methods] -->
+<h2 id="methods"><span class="section_title">[Methods]</span></h2>
+    
+<h3 id="data-collection"><span class="subsection_title">Data Collection Process</span></h3>
+    
+<blockquote>You can view the full data collection process and code on <span class="highlight">data_collection.ipynb</span> and <span class="highlight">session.py</span>.</blockquote>
+    
+<p class="subtitle">&#x2756 Sample Selection</p>
+    
+The data collection for this project will focus on 3 genres: <span class="highlight">Pop</span>, <span class="highlight">Hip-Hop</span>, and <span class="highlight">Viral</span>. And we will be focusing on only these three genres for a few reasons. Broadly speaking, <b>Pop</b> and <b>Hip-Hop</b> are two most prevalent and influential music genres in the current music landscape and social media platforms. These genres encompass a wide spectrum of popular music, making them ideal for finding the audio feature patterns most strongly correlated to virality.
+<br><br>
+To ensure a fair comparison across genres, tracks in the dataset will be pulled from public playlists that fit 2 selection criteria:<br>
+    
+<ol>
+    <li style="font-size: 110%; font-weight: bold;">Must be curated by Spotify</li>
+    <li style="font-size: 110%; font-weight: bold;">Must have a minimum of 1 million likes</li>
+</ol>
+<blockquote><b>Note:</b> Certain tracks may appear in multiple playlists within a genre, our API wrapper is designed to prevent duplicate entries._</blockquote>
+    
+<details>
+    <summary class="toggle">[See selected playlists]</summary>
+    <div style="border: 1px solid #acb2bf; border-radius: 10px;">
+    <div style="display: flex; justify-content: space-between; margin: 0%;">
+      <!-- Left Column -->
+      <div style="flex-basis: 30%;">
+        <h2 class="genre-playlist-list">Pop Playlists</h2>
+        <p style="margin-left: 25%;"><b>Today's Top Hits</b> - <i>50 songs</i></p>
+          <p style="margin-left: 25%;"><b>Hot Hits USA</b> - <i>50 songs</i></p>
+          <p style="margin-left: 25%;"><b>Pop Rising</b> - <i>85 songs</i></p>
+          <p style="margin-left: 25%;"><b>Top Songs USA</b> - <i>50 songs</i></p>
+          <p style="margin-left: 25%;"><b>tean beats</b> - <i>104 songs</i></p>
+      </div>
+      <!-- Middle Column -->
+      <div style="flex-basis: 30%;">
+        <h2 class="genre-playlist-list">Hip-Hop Playlists</h2>
+        <p style="margin-left: 25%;"><b>RapCaviar</b> - <i>51 songs</i></p>
+          <p style="margin-left: 25%;"><b>Feelin' Myself</b> - <i>50 songs</i></p>
+          <p style="margin-left: 25%;"><b>Most Necessary</b> - <i>100 songs</i></p>
+          <p style="margin-left: 25%;"><b>Get Turnt</b> - <i>100 songs</i></p>
+      </div>
+      <!-- Right Column -->
+      <div style="flex-basis: 30%;">
+        <h2 class="genre-playlist-list">Viral Playlists</h2>
+        <p style="margin-left: 25%;"><b>Viral Hits</b> - <i>76 songs</i></p>
+          <p style="margin-left: 25%;"><b>Hits de Internet</b> - <i>100 songs</i></p>
+          <p style="margin-left: 25%;"><b>Internet People</b> - <i>100 songs</i></p>
+      </div>
+    </div>
+    </div>
+</details>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<br>
+    
+<p class="subtitle">&#x2756 Validate Created Dataset</p>
+    
+Once the dataset has been collected, we must verify its contents before moving onto the data analysis process. The first step was to ensure that <b>each genre was sampled from equally</b> and that <b>enough total tracks were collected</b>. With 12 audio features to analyze, we can follow a general rule of thumb and define a <i>minimum of 120 tracks</i> in the dataset of each genre (<i>360 tracks total</i>). We can verify that the data collected for this project satisfies both criteria using a Python snippet.
+    
+<!-- Data sampling verification code snippet -->
+
+<details style="width: 100%; padding-top: 5px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code>num_pop = <span style="color: #e7c07b;">len</span>(pop_data)
+num_hiphop = <span style="color: #e7c07b;">len</span>(hiphop_data)
+num_viral = <span style="color: #e7c07b;">len</span>(viral_data)
+total = num_pop + num_hiphop + num_viral
+            
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'Total track recorded:</span> <span style="color: #e06c76;">{total}</span><span style="color: #98c379;">'</span>)
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'Pop:</span> <span style="color: #e06c76;">{num_pop}</span> <span style="color: #98c379;">tracks,</span> <span style="color: #e06c76;">{</span><span style="color: #e7c07b;">round</span><span style="color: #e06c76;">(((num_pop / total) *</span> <span style="color: #d29b67;">100</span><span style="color: #e06c76;">),</span> <span style="color: #d29b67;">2</span><span style="color: #e06c76;">)}</span><span style="color: #98c379;">% of total dataset'</span>)
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'Hip-Hop:</span> <span style="color: #e06c76;">{num_hiphop}</span> <span style="color: #98c379;">tracks,</span> <span style="color: #e06c76;">{</span><span style="color: #e7c07b;">round</span><span style="color: #e06c76;">(((num_hiphop / total) *</span> <span style="color: #d29b67;">100</span><span style="color: #e06c76;">),</span> <span style="color: #d29b67;">2</span><span style="color: #e06c76;">)}</span><span style="color: #98c379;">% of total dataset'</span>)
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'Viral:</span> <span style="color: #e06c76;">{num_viral}</span> <span style="color: #98c379;">tracks,</span> <span style="color: #e06c76;">{</span><span style="color: #e7c07b;">round</span><span style="color: #e06c76;">(((num_viral / total) *</span> <span style="color: #d29b67;">100</span><span style="color: #e06c76;">),</span> <span style="color: #d29b67;">2</span><span style="color: #e06c76;">)}</span><span style="color: #98c379;">% of total dataset'</span>)
+</code></pre>
+</p>
+</div>
+</div>
+</details>
+<div style="display: flex; justify-content: flex-start;">
+<div style="flex: 0 0; white-space: nowrap; width: 500px;">
+<p>
+<span class="label">Code Output:</span>
+<pre><code>Total track recorded: 708
+Pop: 217 tracks, 30.65% of total dataset
+Hip-Hop: 236 tracks, 33.33% of total dataset
+Viral: 255 tracks, 36.02% of total dataset</code></pre>
+</p>
+</div>
+</div> 
+<br>
+    
+<!-- No missing value verification -->
+    
+After checking the distribution of each genre in the sampling of our complete dataset, we use our Session API wrapper again to collect the audio feature data for every track. In this process, the Session wrapper aggregates the responses from multiple API calls and returns the audio data as a list of dictionaries where each dictionary contains the key-value pairs for all audio attributes and for a track's Spotify ID. We can verify that the resulting audio data collected for each genre <b>does not contain any null values</b> by using another Python snippet.
+    
+<!-- No missing value verification code snippet-->
+<details style="width: 100%; padding-top: 5px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #98c379;">''' Define helper function to validate the collected data '''</span>
+<span style="color: #5d6370; font-style: italic"># The expected length for values in our data dictionaries is 15: ['name', 'artist', and 13 ATTRIBUTES]</span>
+<span style="color: #c276d9;">def</span> <span style="color: #62aeef;">show_missing_data</span>(data):
+    num_entries = <span style="color: #e7c07b;">len</span>(data)
+    num_rows_with_missing = <span style="color: #d29b67;">0</span>
+    missing_attr_ct = {} # Dictionary to count entries with null data for an attribute
+    
+    <span style="color: #5d6370; font-style: italic"># Define all expected keys to find in nested data dictionary for each track</span>
+    expected_keys = ATTRIBUTES.copy()
+    expected_keys.extend([<span style="color: #98c379;">'name'</span>, <span style="color: #98c379;">'artist'</span>])
+    
+    <span style="color: #5d6370; font-style: italic"># Count missing data</span>
+    <span style="color: #c276d9;">for</span> entry <span style="color: #c276d9;">in</span> data.values():
+        is_row_missing_any = <span style="color: #56b6c3;">False</span>
+        
+        <span style="color: #5d6370; font-style: italic"># Check if key in current row is null</span>
+        <span style="color: #c276d9;">for</span> key <span style="color: #c276d9;">in</span> expected_keys:
+            <span style="color: #c276d9;">if</span> key <span style="color: #c276d9;">not in</span> entry:
+                <span style="color: #5d6370; font-style: italic"># Row is missing value for key</span>
+                is_row_missing_any = <span style="color: #56b6c3;">True</span>
+                missing_attr_ct[key] = missing_attr_ct.get(key, <span style="color: #d29b67;">0</span>) + <span style="color: #d29b67;">1</span>
+        
+        <span style="color: #c276d9;">if</span> is_row_missing_any:
+            num_rows_with_missing += <span style="color: #e7c07b;">1</span>
+        
+    <span style="color: #5d6370; font-style: italic"># Print results</span>
+    <span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'Dataset contains</span> <span style="color: #e06c76;">{num_entries}</span> <span style="color: #98c379;">rows'</span>)
+    <span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'# of rows with missing values:</span> <span style="color: #e06c76;">{num_rows_with_missing}</span><span style="color: #98c379;">'</span>)
+    missing_attr_items = missing_attr_ct.items()
+    total_missing = <span style="color: #d29b67;">0</span>
+    <span style="color: #c276d9;">if</span> missing_attr_items:
+        <span style="color: #5d6370; font-style: italic"># Dataset contains attributes with null entries</span>
+        <span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'{Missing Attributes : # of null entries}'</span>)
+        
+        <span style="color: #c276d9;">for</span> k, v <span style="color: #c276d9;">in</span> missing_attr_items:
+            <span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'\'</span><span style="color: #e06c76;">{k}</span><span style="color: #98c379;">\' : </span><span style="color: #e06c76;">{v}</span><span style="color: #98c379;">'</span>)
+            total_missing += v
+    <span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">f'# of missing values:</span> <span style="color: #e06c76;">{total_missing}</span><span style="color: #98c379;">\n'</span>)
+        
+<span style="color: #98c379;">''' Validate our collected datasets '''</span>
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'== Pop dataset =='</span>)
+show_missing_data(pop_data)
+        
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'== Hip-Hop dataset =='</span>)
+show_missing_data(hiphop_data)
+        
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'== Viral dataset =='</span>)
+show_missing_data(viral_data)
+</code></pre>     
+</p>
+</div>
+</div>
+</details>
+<div style="display: flex; justify-content: flex-start;">
+<div style="flex: 0 0; white-space: nowrap; width: 500px;">
+<p>
+<span class="label">Code Output:</span>
+<pre><code> == Pop dataset ==
+Dataset contains 217 rows
+# of rows with missing values: 0
+# of missing values: 0
+    
+== Hip-Hop dataset ==
+Dataset contains 236 rows
+# of rows with missing values: 0
+# of missing values: 0
+    
+== Viral dataset ==
+Dataset contains 255 rows
+# of rows with missing values: 0
+# of missing values: 0
+</code></pre>
+</p>
+</div>
+</div>
+
+<p>Now that we have ensured that the data we have gathered is complete, evenly-distributed, and sufficiently large, the data can be aggregated into a CSV file to be read from later for data analysis.</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<h3 id="data-analysis"><span class="subsection_title">Data Analysis Process</span></h3>
+<blockquote>You can view the full data analysis process and code on <span class="highlight">data_analysis_and_visualization.ipynb</span>.</blockquote>
+<p>To conduct a more comprehensive review, the data analysis process will consist of 3 different statistical approaches: <b>Comparative Descriptive Analysis</b>, <b>Principal Component Analysis (PCA)</b>, and <b>t-Distributed Stochastic Neighbor Embedding (t-SNE)</b>.</p>
+<p class="subtitle">&#x2756 Step 1: Comparative Descriptive Analysis (CDA)</p>
+<p>Beginning the data analysis process, to get a quick overview of the differences in audio attributes between the genre groups, we will start with comparative descriptive analysis. This is a useful method for quickly comparing key statistical measures between each group. In this investigation, we will be comparing the grouped descriptive statistics between the genres <span class="highlight">Viral</span>, <span class="highlight">Pop</span>, and <span class="highlight">Hip-Hop</span>. And for completeness, we will also be comparing the statistics for the <span class="highlight">Viral</span> genre compared to the combined statistics of the <span class="highlight">non-Viral</span> genres.</p>
+<p class="subtitle">&#x2756 Step 2: Principal Component Analysis (PCA)</p>
+<p>After understanding the distinct attributes of each group, PCA is employed to analyze the data further. Note that PCA does not consider class labels. Instead, it focuses on the variance in the data, aiming to find the directions (principal components) that maximize this variance. Using this idea, PCA provides a broader understanding of the overall structure and variability in the data. And while this can be useful, PCA is a linear method and other non-linear methods such as t-SNE may be better suited to capturing more nuanced and non-linear correlations in variance.</p>
+<p class="subtitle">&#x2756 Step 3: t-Distributed Stochastic Neighbor Embedding (t-SNE)</p>
+<p>t-SNE is a non-linear dimensionality reduction technique often utilized for the visualization of high-dimensional data. In contrast to PCA, which is a linear method, t-SNE primarily focuses on preserving local structures and relationships within the dataset. This is achieved by effectively maintaining the relative distances between nearby points when reducing dimensions, allowing t-SNE to capture non-linear relationships. This makes t-SNE a suitable alternative for analyzing datasets where variance is broadly distributed across many dimensions, offering a different perspective for finding insights.</p>
+<p>Important hyperparameters to keep in mind are <span class="highlight">perplexity</span> and <span class="highlight">learning rate</span>. These hyperparameters can have significant impact on the results and so, careful tuning is needed. For a quick overview,</p>
+
+<blockquote style="color: #acb2bf;">
+<h5><span class="subsection_title">'Perplexity'</span></h3>
+    <ul>
+        <li><span style="font-weight: bold; font-size: 110%;">Role</span>: It is a measure of how many close neighbors each point has. Perplexity has a large effect on the resulting plot and can be thought of as a the balancing of local and global aspects of the data.</li>
+        <li><span style="font-weight: bold; font-size: 110%;">Typical Range</span>: Usually between 5 and 50, but larger dataset may require more.</li>
+        <li><span style="font-weight: bold; font-size: 110%;">Tuning</span>: If the plot looks overly fragmented or too "noisy", <i>reduce</i> the perplexity. If the plot looks too "clumpy" and not enough structure is visible, <i>increase</i> the perplexity. Look for a value where clusters in the plot seem well-separated and meaningful, without being too fragmented.</li>
+    </ul> 
+</blockquote>
+
+<blockquote style="color: #acb2bf;">
+<h5><span class="subsection_title">'Learning Rate'</span></h3>
+    <ul>
+        <li><span style="font-weight: bold; font-size: 110%;">Role</span>: This controls how much the model changes with each iteration. Learning rate affects the convergence of the model; a very <i>high</i> learning rate may cause the model to converge too quickly and reach a suboptimal solution, while a very <i>low</i> rate may slow down the convergence excessively.</li>
+        <li><span style="font-weight: bold; font-size: 110%;">Typical Range</span>: Typically between 10 and 1000.</li>
+        <li><span style="font-weight: bold; font-size: 110%;">Tuning</span>: If the resulting plot looks too chaotic or points seem to crowd together, <i>lower</i> the learning rate. If the model doesn't seem to converge (i.e., the plot changes a lot with each iteration), <i>increase</i> the learning rate.</li>
+    </ul>
+</blockquote>
+
+<p>In general, tuning of these hyperparameters can be thought of as a visual process. t-SNE is primarily a visualization tool, so the quality of the results largely depends on how well they reveal insights of the data.</p>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+
+<hr>
+
+<!-- [Results] -->
+    
+<h2 id="results"><span class="section_title">[Results]</span></h2>
+
+<blockquote><b>Note:</b> The results have been calculated using Spotify data that was collected on <b>Nov 11, 2023</b>.</blockquote>
+
+<!-- CDA results -->
+<h3 id="cda-results"><span class="subsection_title">Results from CDA</span></h3>
+<p class="subtitle">&#x2756 Comparative Descriptive Statistics Across Genres</p>
+<div style="display: flex; justify-content: space-between; margin-left: 20pt; margin-right: 20pt; margin-bottom: 10pt;">
+    <div style="width: 32%; text-align: center;">
+        <div>
+        <p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Others'</span></p>
+        <table class="dataframe">
+        <thead>
+            <tr>
+                <th></th>
+                <th>mean</th>
+                <th>std</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>tempo</th>
+                <td>-2.243648</td>
+                <td>0.436465</td>
+            </tr>
+            <tr>
+                <th>key</th>
+                <td>0.537021</td>
+                <td>-0.120558</td>
+            </tr>
+            <tr>
+                <th>loudness</th>
+                <td>-0.331071</td>
+                <td>0.575258</td>
+            </tr>
+            <tr>
+                <th>instrumentalness</th>
+                <td>0.041483</td>
+                <td>0.107623</td>
+            </tr>
+            <tr>
+                <th>speechiness</th>
+                <td>-0.028249</td>
+                <td>-0.016016</td>
+            </tr>
+            <tr>
+                <th>mode</th>
+                <td>-0.021789</td>
+                <td>0.005941</td>
+            </tr>
+            <tr>
+                <th>time_signature</th>
+                <td>-0.021789</td>
+                <td>0.044853</td>
+            </tr>
+            <tr>
+                <th>valence</th>
+                <td>0.018328</td>
+                <td>0.023584</td>
+            </tr>
+            <tr>
+                <th>acousticness</th>
+                <td>0.014661</td>
+                <td>0.009676</td>
+            </tr>
+            <tr>
+                <th>liveness</th>
+                <td>0.010493</td>
+                <td>0.021459</td>
+            </tr>
+            <tr>
+                <th>energy</th>
+                <td>0.009980</td>
+                <td>0.004720</td>
+            </tr>
+            <tr>
+                <th>danceability</th>
+                <td>-0.000919</td>
+                <td>-0.015969</td>
+            </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <div style="width: 32%; text-align: center;">
+    <div>
+    <p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Pop'</span></p>
+    <table class="dataframe">
+      <thead>
+        <tr>
+          <th></th>
+          <th>mean</th>
+          <th>std</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>tempo</th>
+          <td>1.003508</td>
+          <td>-1.036049</td>
+        </tr>
+        <tr>
+          <th>loudness</th>
+          <td>-0.332631</td>
+          <td>0.330845</td>
+        </tr>
+        <tr>
+          <th>key</th>
+          <td>-0.146634</td>
+          <td>-0.029489</td>
+        </tr>
+        <tr>
+          <th>danceability</th>
+          <td>0.061681</td>
+          <td>-0.009780</td>
+        </tr>
+        <tr>
+          <th>acousticness</th>
+          <td>-0.061200</td>
+          <td>-0.025159</td>
+        </tr>
+        <tr>
+          <th>speechiness</th>
+          <td>0.057230</td>
+          <td>0.047737</td>
+        </tr>
+        <tr>
+          <th>time_signature</th>
+          <td>0.041872</td>
+          <td>0.019091</td>
+        </tr>
+        <tr>
+          <th>instrumentalness</th>
+          <td>0.031162</td>
+          <td>0.079736</td>
+        </tr>
+        <tr>
+          <th>liveness</th>
+          <td>0.011583</td>
+          <td>0.013639</td>
+        </tr>
+        <tr>
+          <th>mode</th>
+          <td>-0.010355</td>
+          <td>0.002328</td>
+        </tr>
+        <tr>
+          <th>energy</th>
+          <td>0.009458</td>
+          <td>-0.025059</td>
+        </tr>
+        <tr>
+          <th>valence</th>
+          <td>0.001526</td>
+          <td>0.016517</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <div style="width: 32%; text-align: center;">
+    <div>
+    <p><span class="label", style="font-size: 120%; text-align: center;">'Viral' vs 'Hip-Hop'</span></p>
+    <table class="dataframe">
+      <thead>
+        <tr>
+          <th></th>
+          <th>mean</th>
+          <th>std</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>tempo</th>
+          <td>-5.229381</td>
+          <td>2.154625</td>
+        </tr>
+        <tr>
+          <th>key</th>
+          <td>1.165636</td>
+          <td>-0.103694</td>
+        </tr>
+        <tr>
+          <th>loudness</th>
+          <td>-0.329636</td>
+          <td>0.820214</td>
+        </tr>
+        <tr>
+          <th>speechiness</th>
+          <td>-0.106846</td>
+          <td>-0.011870</td>
+        </tr>
+        <tr>
+          <th>acousticness</th>
+          <td>0.084415</td>
+          <td>0.073350</td>
+        </tr>
+        <tr>
+          <th>time_signature</th>
+          <td>-0.080326</td>
+          <td>0.081817</td>
+        </tr>
+        <tr>
+          <th>danceability</th>
+          <td>-0.058479</td>
+          <td>0.001648</td>
+        </tr>
+        <tr>
+          <th>instrumentalness</th>
+          <td>0.050973</td>
+          <td>0.151142</td>
+        </tr>
+        <tr>
+          <th>valence</th>
+          <td>0.033777</td>
+          <td>0.030924</td>
+        </tr>
+        <tr>
+          <th>mode</th>
+          <td>-0.032303</td>
+          <td>0.008495</td>
+        </tr>
+        <tr>
+          <th>energy</th>
+          <td>0.010459</td>
+          <td>0.038151</td>
+        </tr>
+        <tr>
+          <th>liveness</th>
+          <td>0.009490</td>
+          <td>0.028914</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+</div>
+    
+<details style="width: 100%;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #98c379;">'''
+Comparative Descriptive Analysis
+'''</span>
+<span style="color: #5d6370; font-style: italic"># Split dataset into smaller datasets grouped by 'genre'</span>
+viral_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Viral'</span>]
+viral_audio_data = viral_data[audio_features]
+    
+other_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] != <span style="color: #98c379;">'Viral'</span>]
+other_audio_data = other_data[audio_features]
+    
+pop_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Pop'</span>]
+pop_audio_data = pop_data[audio_features]
+    
+hiphop_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == <span style="color: #98c379;">'Hip-Hop'</span>]
+hiphop_audio_data = hiphop_data[audio_features]
+    
+    
+<span style="color: #5d6370; font-style: italic"># Compute descriptive statistics of each genre group</span>
+viral_audio_stats = viral_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+other_audio_stats = other_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+pop_audio_stats = pop_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+hiphop_audio_stats = hiphop_audio_data.describe().loc[[<span style="color: #98c379;">'mean'</span>, <span style="color: #98c379;">'std'</span>]]
+    
+    
+<span style="color: #5d6370; font-style: italic"># Compare the descriptive statistics of the 'Viral' genre with other genres</span>
+viral_vs_other_stats = viral_audio_stats - other_audio_stats
+viral_vs_pop_stats = viral_audio_stats - pop_audio_stats
+viral_vs_hiphop_stats = viral_audio_stats - hiphop_audio_stats
+    
+
+<span style="color: #5d6370; font-style: italic"># Sort the comparative statistics for easier interpretation</span>
+viral_vs_other_stats_T = viral_vs_other_stats.T
+viral_vs_other_stats_sorted = viral_vs_other_stats_T.reindex(viral_vs_other_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
+    
+viral_vs_pop_stats_T = viral_vs_pop_stats.T
+viral_vs_pop_stats_sorted = viral_vs_pop_stats_T.reindex(viral_vs_pop_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
+    
+viral_vs_hiphop_stats_T = viral_vs_hiphop_stats.T
+viral_vs_hiphop_stats_sorted = viral_vs_hiphop_stats_T.reindex(viral_vs_hiphop_stats_T[<span style="color: #98c379;">'mean'</span>].<span style="color: #e7c07b;">abs</span>().sort_values(ascending=<span style="color: #56b6c3;">False</span>).index)
+    
+    
+<span style="color: #5d6370; font-style: italic"># Display results</span>
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs Other genres'</span>)
+display(viral_vs_other_stats_sorted)
+    
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs Pop'</span>)
+display(viral_vs_pop_stats_sorted)
+    
+<span style="color: #e7c07b;">print</span>(<span style="color: #98c379;">'Viral vs HipHop'</span>)
+display(viral_vs_hiphop_stats_sorted)
+</code></pre>
+</p>
+</div>
+</div>
+</details>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<br>
+    
+<p class="subtitle">&#x2756 Pair-plot of most distinguishing audio features identified through CDA</p>
+    
+<img src="images/pairplot.png" width=70%>
+    
+<details style="width: 100%; margin-top: 10px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #98c379;">'''
+Pair-plots for most distinctive features of the 'Viral' genre
+'''</span>
+<span style="color: #5d6370; font-style: italic"># Selecting key features for the plot</span>
+features_to_plot = [<span style="color: #98c379;">'tempo'</span>, <span style="color: #98c379;">'key'</span>, <span style="color: #98c379;">'loudness'</span>, <span style="color: #98c379;">'speechiness'</span>]
+    
+<span style="color: #5d6370; font-style: italic"># Creating a pairplot</span>
+plt.figure(figsize=(<span style="color: #d29b67;">10</span>, <span style="color: #d29b67;">8</span>))
+pair_plot = sns.pairplot(spotify_data, hue=<span style="color: #98c379;">'genre'</span>, <span style="color: #e7c07b;">vars</span>=features_to_plot, markers=<span style="color: #98c379;">'x'</span>, palette=genre_color_map, corner=<span style="color: #56b6c3;">True</span>)
+pair_plot.fig.suptitle(<span style="color: #98c379;">'Pair-plots of most distinctive features of the \'Viral\' genre'</span>)
+plt.show()
+</code></pre>    
+</p>
+</div>
+</div>
+</details>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<!-- PCA results -->
+    
+<h3 id="pca-results"><span class="subsection_title">Results from PCA</span></h3>
+    
+<p class="subtitle">&#x2756 Scree Plot</p>
+    
+<img src="images/pca_scree_plot.png" width=70%>
+    
+<details style="width: 100%; margin-top: 10px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #98c379;">'''
+Applying PCA using the scikit-learn library
+'''</span>
+<span style="color: #5d6370; font-style: italic"># Import required libraries</span>
+<span style="color: #c276d9;">from</span> sklearn.decomposition <span style="color: #c276d9;">import</span> PCA
+<span style="color: #c276d9;">from</span> sklearn.preprocessing <span style="color: #c276d9;">import</span> StandardScaler
+    
+<span style="color: #5d6370; font-style: italic"># Selecting only the audio features for PCA</span>
+audio_data = spotify_data[audio_features]
+    
+<span style="color: #5d6370; font-style: italic"># Standardizing the data</span>
+scaler = StandardScaler()
+audio_data_scaled = scaler.fit_transform(audio_data)
+    
+<span style="color: #5d6370; font-style: italic"># Fitting the PCA model</span>
+pca = PCA(n_components=<span style="color: #e7c07b;">len</span>(audio_features))
+audio_data_pca = pca.fit_transform(audio_data_scaled)
+    
+<span style="color: #5d6370; font-style: italic"># Plotting the explained variance ratio of each principal component</span>
+plt.figure(figsize=(<span style="color: #d29b67;">10</span>, <span style="color: #d29b67;">8</span>))
+barplot = sns.barplot(x=[<span style="color: #98c379;">f"PC</span><span style="color: #e06c76;">{i}</span><span style="color: #98c379;">"</span> <span style="color: #c276d9;">for</span> i <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">range</span>(<span style="color: #d29b67;">1</span>, <span style="color: #e7c07b;">len</span>(audio_features) + <span style="color: #d29b67;">1</span>>)],
+                     y=pca.explained_variance_ratio_, hue=pca.explained_variance_ratio_,
+                     palette=sns.light_palette(<span style="color: #98c379;">'mediumseagreen'</span>, as_cmap=<span style="color: #56b6c3;">True</span>),
+                     legend=<span style="color: #56b6c3;">False</span>)
+    
+<span style="color: #5d6370; font-style: italic"># Add a line plot to visualize the 'elbow'</span>
+plt.plot(pca.explained_variance_ratio_, marker=<span style="color: #98c379;">'o'</span>, color=<span style="color: #98c379;">'#c678dd'</span>, alpha=<span style="color: #d29b67;">0.7</span>, linestyle=<span style="color: #98c379;">'-'</span>, markersize=<span style="color: #d29b67;">8</span>)
+    
+<span style="color: #5d6370; font-style: italic"># Offset for text labels to avoid overlap with the line plot markers</span>
+label_offset = <span style="color: #e7c07b;">max</span>(pca.explained_variance_ratio_) * <span style="color: #d29b67;">0.01</span>  <span style="color: #5d6370; font-style: italic"># 1% of the max PVE</span>
+    
+<span style="color: #5d6370; font-style: italic"># Add PVE labels on each bar</span>
+<span style="color: #c276d9;">for</span> p <span style="color: #c276d9;">in</span> barplot.patches:
+    barplot.text(x=(p.get_x() + p.get_width() / <span style="color: #d29b67;">2.</span>), y=(p.get_height()+label_offset), s=<span style="color: #98c379;">'{:.2%}'</span>.<span style="color: #e7c07b;">format</span>(p.get_height()), ha=<span style="color: #98c379;">"center"</span>, va=<span style="color: #98c379;">"bottom"</span>)
+    
+<span style="color: #5d6370; font-style: italic"># Add plot labels</span>
+plt.title(<span style="color: #98c379;">'PCA Scree Plot'</span>)
+plt.xlabel(<span style="color: #98c379;">'Principal Component (PC)'</span>)
+plt.ylabel(<span style="color: #98c379;">'Percent Variance Explained (PVE)'</span>)
+plt.savefig(<span style="color: #98c379;">'images/pca_scree_plot.png'</span>)
+plt.show()
+</code></pre>
+</p>
+</div>
+</div>
+</details>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<p class="subtitle">&#x2756 Feature Loading Values of Principal Components</p>
+<table class="dataframe" style="font-size: 10pt; overflow-x: auto;">
+    <thead>
+        <tr style="text-align: right;">
+            <th></th>
+            <th>acousticness</th>
+            <th>danceability</th>
+            <th>energy</th>
+            <th>instrumentalness</th>
+            <th>key</th>
+            <th>liveness</th>
+            <th>loudness</th>
+            <th>mode</th>
+            <th>speechiness</th>
+            <th>tempo</th>
+            <th>time_signature</th>
+            <th>valence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>PC1</th>
+            <td>0.406799</td>
+            <td>-0.332559</td>
+            <td>-0.526605</td>
+            <td>0.164462</td>
+            <td>0.045624</td>
+            <td>-0.069276</td>
+            <td>-0.493734</td>
+            <td>0.049503</td>
+            <td>-0.135709</td>
+            <td>-0.137082</td>
+            <td>-0.095911</td>
+            <td>-0.346477</td>
+        </tr>
+        <tr>
+            <th>PC2</th>
+            <td>0.183858</td>
+            <td>-0.166657</td>
+            <td>0.214152</td>
+            <td>0.204711</td>
+            <td>0.476021</td>
+            <td>0.038711</td>
+            <td>0.205642</td>
+            <td>-0.386444</td>
+            <td>-0.484363</td>
+            <td>-0.021462</td>
+            <td>-0.410263</td>
+            <td>0.165975</td>
+        </tr>
+        <tr>
+            <th>PC3</th>
+            <td>0.128882</td>
+            <td>0.499862</td>
+            <td>-0.190150</td>
+            <td>0.183472</td>
+            <td>0.262633</td>
+            <td>-0.327071</td>
+            <td>-0.322845</td>
+            <td>-0.308973</td>
+            <td>0.303692</td>
+            <td>-0.027387</td>
+            <td>0.069429</td>
+            <td>0.436194</td>
+        </tr>
+        <tr>
+            <th>PC4</th>
+            <td>0.187548</td>
+            <td>0.239427</td>
+            <td>-0.014898</td>
+            <td>-0.115482</td>
+            <td>-0.341921</td>
+            <td>-0.148782</td>
+            <td>0.072478</td>
+            <td>0.346013</td>
+            <td>-0.303533</td>
+            <td>-0.606751</td>
+            <td>-0.259466</td>
+            <td>0.319871</td>
+        </tr>
+        <tr>
+            <th>PC5</th>
+            <td>-0.288031</td>
+            <td>-0.080717</td>
+            <td>0.182954</td>
+            <td>0.602467</td>
+            <td>-0.074585</td>
+            <td>-0.577254</td>
+            <td>-0.004435</td>
+            <td>0.208885</td>
+            <td>-0.261684</td>
+            <td>0.047022</td>
+            <td>0.229627</td>
+            <td>-0.090711</td>
+        </tr>
+        <tr>
+            <th>PC6</th>
+            <td>0.140565</td>
+            <td>0.041762</td>
+            <td>-0.034587</td>
+            <td>0.062940</td>
+            <td>-0.163143</td>
+            <td>-0.140093</td>
+            <td>-0.013820</td>
+            <td>0.346598</td>
+            <td>0.124978</td>
+            <td>0.641530</td>
+            <td>-0.598552</td>
+            <td>0.146059</td>
+        </tr>
+        <tr>
+            <th>PC7</th>
+            <td>-0.078765</td>
+            <td>0.111787</td>
+            <td>0.061185</td>
+            <td>0.633939</td>
+            <td>0.001079</td>
+            <td>0.670625</td>
+            <td>-0.137959</td>
+            <td>0.225881</td>
+            <td>0.139580</td>
+            <td>-0.136847</td>
+            <td>-0.059344</td>
+            <td>0.118963</td>
+        </tr>
+        <tr>
+            <th>PC8</th>
+            <td>-0.564092</td>
+            <td>0.289905</td>
+            <td>-0.186024</td>
+            <td>-0.109989</td>
+            <td>0.393918</td>
+            <td>-0.069809</td>
+            <td>-0.039064</td>
+            <td>0.147856</td>
+            <td>0.037188</td>
+            <td>-0.201896</td>
+            <td>-0.420328</td>
+            <td>-0.385747</td>
+        </tr>
+        <tr>
+            <th>PC9</th>
+            <td>0.171737</td>
+            <td>-0.141032</td>
+            <td>0.048816</td>
+            <td>-0.175179</td>
+            <td>0.626023</td>
+            <td>-0.014323</td>
+            <td>0.024528</td>
+            <td>0.625391</td>
+            <td>0.017682</td>
+            <td>0.025072</td>
+            <td>0.288443</td>
+            <td>0.222663</td>
+        </tr>
+        <tr>
+            <th>PC10</th>
+            <td>0.105092</td>
+            <td>-0.417521</td>
+            <td>0.241089</td>
+            <td>0.120355</td>
+            <td>0.035719</td>
+            <td>-0.236971</td>
+            <td>0.178185</td>
+            <td>-0.031735</td>
+            <td>0.671773</td>
+            <td>-0.370333</td>
+            <td>-0.248730</td>
+            <td>-0.039275</td>
+        </tr>
+        <tr>
+            <th>PC11</th>
+            <td>0.492451</td>
+            <td>0.463482</td>
+            <td>-0.028790</td>
+            <td>0.188690</td>
+            <td>0.068322</td>
+            <td>-0.026723</td>
+            <td>0.496608</td>
+            <td>0.057817</td>
+            <td>0.069637</td>
+            <td>0.025869</td>
+            <td>0.103176</td>
+            <td>-0.484496</td>
+        </tr>
+        <tr>
+            <th>PC12</th>
+            <td>-0.196866</td>
+            <td>-0.201529</td>
+            <td>-0.711403</td>
+            <td>0.149555</td>
+            <td>-0.015380</td>
+            <td>0.007552</td>
+            <td>0.552010</td>
+            <td>-0.030182</td>
+            <td>0.034793</td>
+            <td>0.012137</td>
+            <td>0.058658</td>
+            <td>0.285396</td>
+        </tr>
+    </tbody>
+</table>
+    
+<details style="width: 100%; margin-top: 10px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #5d6370; font-style: italic"># Displaying the PCA components and loading for each feature</span>
+pca_components = pd.DataFrame(pca.components_, columns=audio_features, index=[<span style="color: #98c379;">f"PC</span><span style="color: #e06c76;">{i}</span><span style="color: #98c379;">"</span> <span style="color: #c276d9;">for</span> i <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">range</span>(<span style="color: #d29b67;">1</span>, <span style="color: #e7c07b;">len</span>(audio_features) + <span style="color: #d29b67;">1</span>)])
+pca_components
+</code></pre>
+</p>
+</div>
+</div>
+</details>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<br>
+    
+<p class="subtitle">&#x2756 PCA Scatterplot across all Genres</p>
+    
+<img src="images/pca_scatterplot.png" width=70%>
+    
+<details style="width: 100%; margin-top: 10px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #98c379;">'''
+Plotting the PCA distribution for tracks across genres
+'''</span>
+<span style="color: #5d6370; font-style: italic"># Adding PCA results back to the dataframe</span>
+spotify_data[<span style="color: #98c379;">'PC1'</span>] = audio_data_pca[:, <span style="color: #d29b67;">0</span>]
+spotify_data[<span style="color: #98c379;">'PC2'</span>] = audio_data_pca[:, <span style="color: #d29b67;">1</span>]
+    
+<span style="color: #5d6370; font-style: italic"># Set up plot figure</span>
+fig, axes = plt.subplots(<span style="color: #d29b67;">2</span>, <span style="color: #d29b67;">3</span>, figsize=(<span style="color: #d29b67;">15</span>, <span style="color: #d29b67;">10</span>))
+    
+<span style="color: #5d6370; font-style: italic"># Plotting the main scatterplot with all genres</span>
+sns.scatterplot(ax=axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>], data=spotify_data, x=<span style="color: #98c379;">'PC1'</span>, y=<span style="color: #98c379;">'PC2'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_title(<span style="color: #98c379;">'PCA Distribution - All Genres'</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_xlabel(<span style="color: #98c379;">'PC1'</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_ylabel(<span style="color: #98c379;">'PC2'</span>)
+    
+<span style="color: #5d6370; font-style: italic"># Hide the empty plots at the sides of the main plot</span>
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">0</span>].axis(<span style="color: #98c379;">'off'</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">2</span>].axis(<span style="color: #98c379;">'off'</span>)
+    
+<span style="color: #5d6370; font-style: italic"># Plot the scatterplots of each genre separately</span>
+<span style="color: #c276d9;">for</span> i, genre <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">enumerate</span>(genre_color_map.keys()):
+    <span style="color: #5d6370; font-style: italic"># Filter the data for the genre</span>
+    genre_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == genre]
+    
+    <span style="color: #5d6370; font-style: italic"># Create a scatter plot for the genre in the bottom row</span>
+    sns.scatterplot(ax=axes[<span style="color: #d29b67;">1</span>, i], data=genre_data, x=<span style="color: #98c379;">'PC1'</span>, y=<span style="color: #98c379;">'PC2'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>, legend=<span style="color: #56b6c3;">False</span>)
+    axes[<span style="color: #d29b67;">1</span>, i].set_title(<span style="color: #98c379;">f"PCA Distribution - </span><span style="color: #e06c76;">{genre}</span> <span style="color: #98c379;">Genre"</span>)
+    axes[<span style="color: #d29b67;">1</span>, i].set_xlabel(<span style="color: #98c379;">'PC1'</span>)
+    axes[<span style="color: #d29b67;">1</span>, i].set_ylabel(<span style="color: #98c379;">'PC2'</span>)
+    
+plt.tight_layout()
+plt.savefig(<span style="color: #98c379;">'images/pca_scatterplot.png'</span>)
+plt.show()
+</code></pre>
+</p>
+</div>
+</div>
+</details>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<!-- t-SNE results -->
+    
+<h3 id="tsne-results"><span class="subsection_title">Results from t-SNE</span></h3>
+    
+<p class="subtitle">&#x2756 t-SNE Scatterplot across all Genres</p>
+    
+<img src="images/tsne_scatterplot.png" width=70%>
+    
+<details style="width: 100%; margin-top: 10px;">
+<summary class="toggle">[Show Code]</summary>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0 0; width: 100%; white-space: nowrap;">
+<p>
+<pre><code><span style="color: #98c379;">'''
+Applying t-SNE using the scikit-learn library
+'''</span>
+<span style="color: #5d6370; font-style: italic"># Import required library</span>
+<span style="color: #c276d9;">from</span> sklearn.manifold <span style="color: #c276d9;">import</span> TSNE
+    
+<span style="color: #5d6370; font-style: italic"># Fitting the t-SNE model</span>
+tsne = TSNE(n_components=<span style="color: #d29b67;">2</span>, random_state=<span style="color: #d29b67;">0</span>)
+tsne_features = tsne.fit_transform(audio_data)
+    
+<span style="color: #5d6370; font-style: italic"># Add t-SNE feature data to dataframe</span>
+spotify_data[<span style="color: #98c379;">'tsne_x'</span>] = tsne_features[:,<span style="color: #d29b67;">0</span>]
+spotify_data[<span style="color: #98c379;">'tsne_y'</span>] = tsne_features[:,<span style="color: #d29b67;">1</span>]
+    
+<span style="color: #5d6370; font-style: italic"># Set up plot figure</span>
+fig, axes = plt.subplots(<span style="color: #d29b67;">2</span>, <span style="color: #d29b67;">3</span>, figsize=(<span style="color: #d29b67;">15</span>, <span style="color: #d29b67;">10</span>))
+    
+<span style="color: #5d6370; font-style: italic"># Plotting the main scatterplot with all genres</span>
+sns.scatterplot(ax=axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>], data=spotify_data, x=<span style="color: #98c379;">'tsne_x'</span>, y=<span style="color: #98c379;">'tsne_y'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_title(<span style="color: #98c379;">'t-SNE Distribution - All Genres'</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_xlabel(<span style="color: #98c379;">'x'</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">1</span>].set_ylabel(<span style="color: #98c379;">'y'</span>)
+    
+<span style="color: #5d6370; font-style: italic"># Hide the empty plots at the sides of the main plot</span>
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">0</span>].axis(<span style="color: #98c379;">'off'</span>)
+axes[<span style="color: #d29b67;">0</span>, <span style="color: #d29b67;">2</span>].axis(<span style="color: #98c379;">'off'</span>)
+    
+<span style="color: #5d6370; font-style: italic"># Plot the scatterplots of each genre separately</span>
+<span style="color: #c276d9;">for</span> i, genre <span style="color: #c276d9;">in</span> <span style="color: #e7c07b;">enumerate</span>(genre_color_map.keys()):
+    <span style="color: #5d6370; font-style: italic"># Filter the data for the genre</span>
+    genre_data = spotify_data[spotify_data[<span style="color: #98c379;">'genre'</span>] == genre]
+    
+    <span style="color: #5d6370; font-style: italic"># Create a scatter plot for the genre in the bottom row</span>
+    sns.scatterplot(ax=axes[<span style="color: #d29b67;">1</span>, i], data=genre_data, x=<span style="color: #98c379;">'tsne_x'</span>, y=<span style="color: #98c379;">'tsne_y'</span>, hue=<span style="color: #98c379;">'genre'</span>, palette=genre_color_map, s=<span style="color: #d29b67;">80</span>, alpha=<span style="color: #d29b67;">0.7</span>, legend=<span style="color: #56b6c3;">False</span>)
+    axes[<span style="color: #d29b67;">1</span>, i].set_title(<span style="color: #98c379;">f"t-SNE Distribution - </span><span style="color: #e06c76;">{genre}</span><span style="color: #98c379;"> Genre"</span>)
+    axes[<span style="color: #d29b67;">1</span>, i].set_xlabel(<span style="color: #98c379;">'x'</span>)
+    axes[<span style="color: #d29b67;">1</span>, i].set_ylabel(<span style="color: #98c379;">'y'</span>)
+    
+plt.tight_layout()
+plt.savefig(<span style="color: #98c379;">'images/tsne_scatterplot.png'</span>)
+plt.show()
+</code></pre>  
+</p>
+</div>
+</div>
+</details>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<!-- [Discussion] -->
+    
+<h2 id="discussion"><span class="section_title">[Discussion]</span></h2>
+    
+<h3 id="cda-takeaways"><span class="subsection_title">Takeaways from CDA</span></h3>
+<ul>
+    <li><span style="font-weight: bold; font-size: 110%;">Tempo</span> - The mean tempo in the <b>Viral</b> genre is slightly lower than the mean for other genres. More specifically, the <b>Viral</b> genre has a slighty higher mean tempo than tracks in the <b>Pop</b> genre. But compared to the <b>Hip-Hop</b> genre, tracks in the <b>Viral</b> genre are noteably slower.</li>
+    <li><span style="font-weight: bold; font-size: 110%;">Key</span> - While the mean key of the <b>Viral</b> genre seems higher than the <b>Hip-Hop</b> genre, it is slightly lower when compared to the <b>Pop</b> genre. And compared to both other genres, the mean key of the <b>Viral</b> genre is a bit higher.</li>
+    <li><span style="font-weight: bold; font-size: 110%;">Loudness</span> - Across the board, the <b>Viral</b> genre is slightly softer than both the <b>Pop</b> and <b>Hip-Hop</b> genres to the same degree.</li>
+    <li><span style="font-weight: bold; font-size: 110%;">Speechiness</span> - The mean speechiness of the <b>Viral</b> genres was marginally lower when compared to other genres. However, when compared to the mean speechiness of the <b>Hip-Hop</b> genre, the magnitude of the difference seems somewhat more significant.</li>
+</ul>
+<p>Based on these observations, the most distinctive features of the <b>Viral</b> genre seem to be a combination of tempo, key, loudness, and speechiness. Using these audio features, we created a pair-plot to see if any pair of these features can reasonably explain the variances between genres. But no clear distinct pattern could be seen in any plot of audio feature pairs.</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<h3 id="pca-takeaways"><span class="subsection_title">Takeaways from PCA</span></h3>
+<p>The PCA of the audio features in our dataset reveals a few insights about the most distinctive audio features of a track:</p>
+<ul>
+    <li><span style="font-weight: bold; font-size: 110%;">PC1</span> - This component is most strongly influenced by acousticness, energy, and loudness. Acousticness has a strong positive correlation, while energy and loudness have strong negative correlations. This suggests that tracks that are more acoustic tend to hand less energy and are quieter.</li>
+    <li><span style="font-weight: bold; font-size: 110%;">PC2</span> - Here, the key, speechiness, and time signature play significant roles. The key has a strong positive correlation, while speechiness and time signature have strong negative correlations. This component captures variations in tracks based on their harmonic structure (key and time signature) and their lyrical content (speechiness).</li>
+    <li><span style="font-weight: bold; font-size: 110%;">PC3</span> - Danceability and valence (the musical positiveness conveyed by a track) are the most influencial features in this component. Both features have strong positive correlations suggesting that tracks that encourage dancing are distinctive in this aspect.</li>
+</ul>
+<p>Unfortunately however, the scree plot does not exhibit a clear elbow-point, indicating that the variance is spread out over several principal components. Specifically, it takes eight principal components to account for 80 percent of the variance, suggesting that the underlying structure of the data is quite complex and not easily captured by linear methods such as PCA.</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+<h3 id="tsne-takeaways"><span class="subsection_title">Takeaways from t-SNE</span></h3>
+
+<p>Through t-SNE analysis, the hope is to uncover meaningful clustering patterns. However, despite extensive efforts to tune key hyperparameters (i.e., perplexity and learning rate), the results did not reveal distinct or meaningful clustering. While t-SNE could be a powerful tool for exploring high-dimensional data, it doesn't always lead to clear clustering. Perhaps the relationships in the dataset are more complex and subtle than could be captured through t-SNE. Further analysis may require the integration of multiple methods and domain-specific expertise to capture the relationships in the data.</p>
+    
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<!-- [Closing Thoughts] -->
+    
+<h2 id="closing-thoughts"><span class="section_title">[Closing Thoughts]</span></h2>
+<p>
+The goal of this analysis was to identify the distinguishing audio feature of <b>viral</b> music in comparison to established genres such as <b>pop</b> and <b>hip-hop</b>. Analysis of the data collected from Spotify's API consisted of <b>comparative descriptive analysis</b>, <b>PCA</b>, and <b>t-SNE</b>.
+<br><br>
+The results from the comparative descriptive analysis revealed minor variations in the average audio features across the genres. However, these differences were not substantial enough to categorically differentiate viral music from pop or hip-hop. This observation was further supported by the PCA and t-SNE outcomes, which failed to reveal any clear clustering of the audio features unique to viral music. The PCA scree plot, in particular, indicated minimal differences in the variance of audio features across the three genres, suggesting that there are <b>no audio feature patterns distinct to viral music</b>.
+<br><br>
+The findings from this analysis indicate that the viral success of a track may not be strongly correlated with any particular audio feature pattern. Instead, the results point towards the possibility that external factors, such as marketing, social media dynamics, cultural trends, and chance, could have a more significant influence on a song's viral potential.
+<br><br> 
+This conclusion underscores the multifaceted nature of musical popularity, which is shaped more by the interplay of societal, cultural, and market dynamics than any combination of acoustic traits.
+</p>
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+    
+<!-- [Contact] -->
+    
+<h2 id="contact"><span class="section_title">[Contact]</span></h2>
+    
+<p>Hi, I'm currently exploring new opportunities and working on projects that showcase my technical skills as I prepare to step into an entry-level data science role. If you want to see more of my projects, follow this link to my <a href="http://www.andrewahn.info" style="color:#c678dd;">personal website</a>. If you're a recruiter or if you have any questions or feedback about my projects, please feel free to reach out!</p>
+    
+<p>You can connect with me via:</p>
+    
+<ul>
+    <li><b>Email:</b> <a href="mailto:4andrewahn@gmail.com"style="color:#c678dd;">4andrewahn@gmail.com</a></li>
+    <li><b>LinkedIn:</b> <a href="http://www.linkedin.com/in/4andrewahn"style="color:#c678dd;">linkedin.com/in/4andrewahn</a></li>
+</ul>
+
+<div class="centered-container">
+    <form action="https://github.com/4andrewahn/sounds-of-virality" target="_blank">
+        <button onclick="submit">See GitHub</button>
+    </form>
+</div>
+
+<p align="right">[<a href="#readme-top" style="color:#c678dd;">Back to top</a>]</p>
+</body>
+    
