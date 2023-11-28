@@ -3,3 +3,4 @@ __pycache__/
 .env
 publishing/
 .vscode/
+.DS_Store/
